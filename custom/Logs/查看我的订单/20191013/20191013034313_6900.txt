@@ -1,0 +1,1 @@
+select * FROM tab_mall_tran t1 join tab_mall_info t2 on t1.goods_name = t2.goods_name  where state ='待提货' 

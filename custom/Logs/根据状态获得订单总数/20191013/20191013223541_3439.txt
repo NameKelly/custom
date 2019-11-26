@@ -1,0 +1,1 @@
+Unknown column 'orde_date' in 'where clause'

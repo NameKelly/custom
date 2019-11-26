@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>确认下单</title>
+    <meta name="viewpoint" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./css/sure_order.css">
+    <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <script src="Scripts/jquery.cookie.js" type="text/javascript"></script>
+    <script src="Scripts/jquery.form.js" type="text/javascript"></script>
+    <script src="Scripts/json2.js" type="text/javascript"></script>
+    <script>
+        var key_id;
+        window.onload = function () {
+            var url = location.search; //获取url中"?"符后的字串 ('?modFlag=business&role=1')  
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1); //substr()方法返回从参数值开始到结束的字符串；  
+                var strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = (strs[i].split("=")[1]);
+                }
+                console.log(theRequest.data); //此时的theRequest就是我们需要的参数；
+                select_order(theRequest.data);
+                key_id = theRequest.data;
+            }
+        }
+        function back() {
+            window.location.href = "./mall.html" ;
+        }
+
+        //查看订单
+        function select_order(order_id) {
+            console.log("查看订单",order_id);
+            $.ajax({
+                type: "post",
+                url: "api/select_order",
+                data: { order_id: order_id },
+
+                success: function (res) {
+                    //var info = JSON.parse(res);
+                    var info = eval("(" + res + ")");
+                    var message = info.data[0];
+                    console.log("查看订单", message, info);
+                    document.getElementById('name').innerText = message.usr_name;
+                    document.getElementById('tel').innerText = message.phone_no;
+                    document.getElementById('address').innerText = info.data1;
+
+                    for (let i = 0; i < info.data.length; i++) {
+                        var table = document.getElementById('table');
+                        var tr = document.createElement('tr');
+                        var td_1 = document.createElement('td');
+                        td_1.innerHTML = info.data[i].goods_name;
+                        var td_2 = document.createElement('td');
+                        td_2.innerHTML = info.data[i].quantity;
+                        var td_3 = document.createElement('td');
+                        td_3.innerHTML = info.data[i].money;
+                        tr.appendChild(td_1);
+                        tr.appendChild(td_2);
+                        tr.appendChild(td_3);
+                        table.appendChild(tr);
+                        //是否执行完毕
+                      
+                    }
+                    sum();
+                }
+            });
+        }
+       
+        //确认下单
+        function confirm_order() {
+
+            $.ajax({
+                type: "post",
+                url: "api/confirm_order",
+                data: { order_id: key_id },
+
+                success: function (data) {
+                    console.log('确认下单', data, key_id);
+                   //let info =JSON.parse(data);
+                    let info = eval("(" + data + ")");
+                    alert(info.msg);
+                    goto_order();
+
+                }
+            });
+        }
+        //合计
+       
+        function sum() {
+            var table = document.getElementById('table');
+            var rows=table.rows;//获取行对象
+            var colums = table.rows[0].cells.length;//获取列数	
+            var tr = document.createElement('tr');
+            var td_1 = document.createElement('td');
+            var td_2 = document.createElement('td');
+            var td_3 = document.createElement('td');
+
+            tr.appendChild(td_1);
+            tr.appendChild(td_2);
+            tr.appendChild(td_3);
+            td_1.innerHTML = "合计";
+            td_2.innerHTML = num_sum(1);
+            td_3.innerHTML = num_sum(2);
+
+            table.appendChild(tr);
+            num_sum();
+                
+        }
+
+        function num_sum(index) {
+            var get_num = 0;
+            var table = document.getElementById("table");//获取table对象
+            var rows = table.rows;//获取行对象
+            var cells = table.rows.item(0).cells;//获取列对象
+            var colums = table.rows[0].cells.length;//获取列数        
+            console.log(rows, cells, colums)
+
+            for (var i = 1; i < table.rows.length; i++) {
+                get_num += table.rows[i].cells[index].innerText * 1;
+            }
+            return get_num;
+        }
+        function goto_order() {
+            //var active = "liactive";
+            //window.location.href = "./mall.html?data=" + active;
+            window.location.href = "./my_order.html?data=" + key_id;
+        }
+      
+        
+    </script>
+</head>
+<body>
+    <!--<header>
+        <figure><img src="img\back.png" onclick="back()"></figure>
+        <figcaption>确认下单</figcaption>
+        <figure class="img1"><img src="img\more.png"></figure>
+    </header>-->
+    <section>
+        <p class="line">
+            <span class="name" id="name">张小明</span>&nbsp;
+            <span class="tel" id="tel">12345678912</span>
+        </p>
+        <hr>
+        <p class="line">*请在提货日期内前往<span id="address">饭堂x楼x窗口</span>提货</p>
+
+        <div>
+            <h4>订单清单</h4>
+            <table id="table" class="tb">
+                <tr class="table_weigh">
+                    <td>商品名称</td>
+                    <td>数量</td>
+                    <td>价格（元）</td>
+                </tr>
+               <!-- <tr>
+                    <td>鸡翅</td>
+                    <td>1</td>
+                    <td>5元</td>
+                </tr>
+                <tr>
+                    <td>火腿</td>
+                    <td>1</td>
+                    <td>15元</td>
+                </tr>-->
+                <!--<tr class="table_weigh">
+                    <td>合计</td>
+                    <td></td>
+                    <td></td>
+                </tr>-->
+            
+            </table><br>
+            <!--<a href="javascript:void(0);" onclick="goto_order()">前往我的定单></a>-->
+        </div>
+    </section>
+
+    <footer>
+        <input type="button" name="" value="确认预定" onclick="confirm_order()">
+    </footer>
+</body>
+</html>

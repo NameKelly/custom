@@ -1,0 +1,1 @@
+ select t1.name,sum(t1.quantity) quantity,t2.unit_price,sum(t1.money)sum from food_order t1 join food_type t2 on t1.name = t2.name where state = '' GROUP BY t1.name; 

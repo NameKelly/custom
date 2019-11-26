@@ -1,0 +1,1 @@
+Table 'customs.tab_mall_info' doesn't exist

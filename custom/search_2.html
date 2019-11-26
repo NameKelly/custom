@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>取货查询</title>
+    <meta name="viewpoint" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <script src="Scripts/jquery.cookie.js" type="text/javascript"></script>
+    <script src="Scripts/jquery.form.js" type="text/javascript"></script>
+    <script src="Scripts/json2.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="./css/search.css">
+    <script src="Scripts/datePicker.js" type="text/javascript"></script>
+    <script src="Scripts/date.js" type="text/javascript"></script>
+
+    <script>
+        window.onload = function () {
+            var now = urlDate() || getDate();
+            console.log("nowDate", now);
+            document.getElementById('demo1').value = now;
+            select_goods('已完成', now);
+
+        }
+        
+        function show_table(tab, info) {
+            for (let i = 0; i < info.length; i++) {
+                var tr = document.createElement('tr');
+                var td_1 = document.createElement('td');
+                var td_2 = document.createElement('td');
+                var td_3 = document.createElement('td');
+
+                td_1.innerHTML = info[i].usr_name;
+                td_2.innerHTML = info[i].phone_no;
+                td_3.innerHTML = info[i].names;
+
+                tr.appendChild(td_1);
+                tr.appendChild(td_2);
+                tr.appendChild(td_3);
+                tab.appendChild(tr);
+            }
+        }
+
+        //查询取货查询信息（商品查询）
+        function select_goods(key, date) {
+
+            $.ajax({
+                type: "post",
+                url: "api/select_goods",
+                data: { state: key, date: date },
+
+                success: function (data) {
+                    //var message = JSON.parse(data);
+                    var message = eval("(" + data + ")");
+                    var info_1 = message.data;
+                    var info_2 = message.data1;
+                    console.log(key, message, info_1, info_2);
+
+                    var tab1 = document.getElementById('tab_1');
+                    var tab2 = document.getElementById('tab_2');
+                    $("#tab1 tbody").html("");
+                    $("#tab2 tbody").html("");
+
+                    show_table(tab1, info_1);
+                    show_table(tab2, info_2)
+
+                }
+            });
+        }
+        function show_table(tab, info) {
+            let a = info.length;
+            for (let i = 0; i < info.length; i++) {
+                var tr = document.createElement('tr');
+                var td_1 = document.createElement('td');
+                var td_2 = document.createElement('td');
+                var td_3 = document.createElement('td');
+                var td_4 = document.createElement('td');
+
+                td_1.innerHTML = info[i].goods_name;
+                td_2.innerHTML = info[i].real_total;
+                td_3.innerHTML = info[i].goods_price + '元/' + 500 + info[i].unit;
+                td_4.innerHTML = info[i].sum;
+
+                tr.appendChild(td_1);
+                tr.appendChild(td_2);
+                tr.appendChild(td_3);
+                tr.appendChild(td_4);
+                tab.appendChild(tr);
+
+                if (a == i + 1) {
+                    sum(tab);
+                }
+            }
+            //sum(tab);
+        }
+
+        //合计
+        function sum(table) {
+            console.log("添加合并数据");
+            var rows = table.rows;//获取行对象
+            var colums = table.rows[0].cells.length;//获取列数
+            var tr = document.createElement('tr');
+            tr.className = "count";
+            var td_1 = document.createElement('td');
+            var td_2 = document.createElement('td');
+            var td_3 = document.createElement('td');
+            var td_4 = document.createElement('td');
+
+            tr.appendChild(td_1);
+            tr.appendChild(td_2);
+            tr.appendChild(td_3);
+            tr.appendChild(td_4);
+            td_1.innerHTML = rows.length;
+            td_2.innerHTML = num_sum(1, table);
+            td_3.innerHTML = "/";
+            td_4.innerHTML = num_sum(3, table);
+
+            //
+            document.getElementById('leave').innerText = rows.length;
+
+            table.appendChild(tr);
+
+
+        }
+
+        function num_sum(index, table) {
+            var get_num = 0;
+            //var table = document.getElementById("tab1");//获取table对象
+            var rows = table.rows;//获取行对象
+            var cells = table.rows.item(0).cells;//获取列对象
+            var colums = table.rows[0].cells.length;//获取列数
+            console.log(rows, cells, colums)
+
+            for (var i = 0; i < table.rows.length; i++) {
+                get_num += table.rows[i].cells[index].innerHTML * 1;
+            }
+            return get_num;
+        }
+        
+        function go_to() {
+            //window.location.href = "./search_1.html";
+            let date = document.getElementById('demo1').value;
+            //alert(date);
+            window.location.href = "./search_1.html?data=" + date;
+        }
+    </script>
+</head>
+<body>
+
+    <section>
+        <input type="text" id="demo1" value="" class="time">
+        <script>
+	var calendar = new datePicker();
+   calendar.init({
+	'trigger': '#demo1', /*按钮选择器，用于触发弹出插件*/
+	'type': 'date',/*模式：date日期；datetime日期时间；time时间；ym年月；*/
+	'minDate':'1900-1-1',/*最小日期*/
+	'maxDate':'2100-12-31',/*最大日期*/
+	'onSubmit':function(){/*确认时触发事件*/
+        var theSelectData = calendar.value;      
+	    select_goods("已完成", theSelectData);
+	},
+	'onClose':function(){/*取消时触发事件*/
+	}
+});
+
+        </script>
+        <table id="select">
+            <tr style="height: 135px;">
+                <td onclick="go_to()">人员查询</td>
+                <td class="selected">商品查询</td>
+            </tr>
+        </table>
+
+        <table class="tb tb2" style="table-layout: auto;" id="tab1">
+            <caption><p>本次已卖出</p></caption>
+            <thead>
+                <tr class="weight">
+                    <td>商品名称</td>
+                    <td>数量</td>
+                    <td>单价</td>
+                    <td>合计（元）</td>
+                </tr>
+            </thead>
+            <tbody id="tab_1">
+
+            </tbody>
+            
+        </table>
+
+        <table class="tb tb2" style="table-layout: auto;" id="tab2">
+            <caption><p>本次剩余库存-<span id="leave"></span>单 <span style="font-size:35px;">（实际库存）</span></p></caption>
+            <thead>
+                <tr class="weight">
+                    <td>商品名称</td>
+                    <td>数量</td>
+                    <td>单价</td>
+                    <td>合计（元）</td>
+                </tr>
+            </thead>
+           <tbody id="tab_2">
+
+           </tbody>
+        </table>
+
+    </section>
+</body>
+</html>

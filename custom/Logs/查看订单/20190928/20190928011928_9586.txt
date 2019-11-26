@@ -1,0 +1,1 @@
+Unknown column 'phone' in 'field list'

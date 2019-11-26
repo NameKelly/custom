@@ -1,0 +1,1 @@
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(tran_date) min_date from tab_mall_tran where state ='待提货'' at line 1

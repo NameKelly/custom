@@ -1,0 +1,1 @@
+select * from food_order t1 join tab_mall_info t2 on t1.goods_name=t2.goods_name where order_id not in ( select order_id from tab_mall_tran where state='已提货') and  state ='已下单'and phone_no='' 

@@ -1,0 +1,1 @@
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'on t2.Dept.ID where phone_no='13686948977'' at line 1

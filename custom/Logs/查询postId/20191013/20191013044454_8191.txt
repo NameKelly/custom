@@ -1,0 +1,1 @@
+select t1.goods_name,t1.order_date,t2.getgoods_end from food_order t1 join tab_mall_info t2 on t1.goods_name=t2.goods_name where state ='已下单'and order_id = '2' 

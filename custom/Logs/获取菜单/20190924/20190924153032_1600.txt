@@ -1,0 +1,1 @@
+select * from food_type where kind_no = 1

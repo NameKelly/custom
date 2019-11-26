@@ -1,0 +1,1 @@
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1=1  and  state in ('1','2')  group by t1.name' at line 1

@@ -1,0 +1,1 @@
+select usr_name,phone_no,GROUP_CONCAT(goods_name) names  from tab_mall_tran  where state ='已提货'and tran_date like  '%2019-10-13%'  group by order_id

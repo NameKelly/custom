@@ -1,0 +1,1 @@
+操作失败；You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'like, score_look, ccore_color, score_smell,score_taste,score_chef,phone_no,goods' at line 1

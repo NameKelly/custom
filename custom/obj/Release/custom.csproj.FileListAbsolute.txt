@@ -1,0 +1,472 @@
+D:\桌面\custom\custom\obj\Release\custom.csprojResolveAssemblyReference.cache
+D:\桌面\custom\custom\bin\roslyn\csc.exe
+D:\桌面\custom\custom\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\桌面\custom\custom\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\桌面\custom\custom\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\桌面\custom\custom\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\桌面\custom\custom\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\桌面\custom\custom\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\桌面\custom\custom\bin\roslyn\System.Collections.Immutable.dll
+D:\桌面\custom\custom\bin\roslyn\System.Reflection.Metadata.dll
+D:\桌面\custom\custom\bin\roslyn\vbc.exe
+D:\桌面\custom\custom\bin\roslyn\VBCSCompiler.exe
+D:\桌面\custom\custom\bin\roslyn\VBCSCompiler.exe.config
+D:\桌面\custom\custom\bin\custom.dll.config
+D:\桌面\custom\custom\bin\custom.dll
+D:\桌面\custom\custom\bin\custom.pdb
+D:\桌面\custom\custom\bin\Antlr3.Runtime.dll
+D:\桌面\custom\custom\bin\EntityFramework.dll
+D:\桌面\custom\custom\bin\EntityFramework.SqlServer.dll
+D:\桌面\custom\custom\bin\Microsoft.AspNet.Identity.Core.dll
+D:\桌面\custom\custom\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\桌面\custom\custom\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\桌面\custom\custom\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\桌面\custom\custom\bin\Microsoft.Owin.dll
+D:\桌面\custom\custom\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\桌面\custom\custom\bin\Microsoft.Owin.Security.Cookies.dll
+D:\桌面\custom\custom\bin\Microsoft.Owin.Security.dll
+D:\桌面\custom\custom\bin\Microsoft.Owin.Security.Facebook.dll
+D:\桌面\custom\custom\bin\Microsoft.Owin.Security.Google.dll
+D:\桌面\custom\custom\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\桌面\custom\custom\bin\Microsoft.Owin.Security.OAuth.dll
+D:\桌面\custom\custom\bin\Microsoft.Owin.Security.Twitter.dll
+D:\桌面\custom\custom\bin\Microsoft.Web.Infrastructure.dll
+D:\桌面\custom\custom\bin\MySql.Data.dll
+D:\桌面\custom\custom\bin\Newtonsoft.Json.dll
+D:\桌面\custom\custom\bin\Owin.dll
+D:\桌面\custom\custom\bin\System.Net.Http.Formatting.dll
+D:\桌面\custom\custom\bin\System.Web.Helpers.dll
+D:\桌面\custom\custom\bin\System.Web.Http.dll
+D:\桌面\custom\custom\bin\System.Web.Http.Owin.dll
+D:\桌面\custom\custom\bin\System.Web.Http.WebHost.dll
+D:\桌面\custom\custom\bin\System.Web.Mvc.dll
+D:\桌面\custom\custom\bin\System.Web.Optimization.dll
+D:\桌面\custom\custom\bin\System.Web.Razor.dll
+D:\桌面\custom\custom\bin\System.Web.WebPages.Deployment.dll
+D:\桌面\custom\custom\bin\System.Web.WebPages.dll
+D:\桌面\custom\custom\bin\System.Web.WebPages.Razor.dll
+D:\桌面\custom\custom\bin\WebGrease.dll
+D:\桌面\custom\custom\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\桌面\custom\custom\bin\Newtonsoft.Json.xml
+D:\桌面\custom\custom\bin\System.Net.Http.Formatting.xml
+D:\桌面\custom\custom\bin\System.Web.Helpers.xml
+D:\桌面\custom\custom\bin\System.Web.Http.xml
+D:\桌面\custom\custom\bin\System.Web.Http.WebHost.xml
+D:\桌面\custom\custom\bin\System.Web.Mvc.xml
+D:\桌面\custom\custom\bin\System.Web.Optimization.xml
+D:\桌面\custom\custom\bin\System.Web.Razor.xml
+D:\桌面\custom\custom\bin\System.Web.WebPages.xml
+D:\桌面\custom\custom\bin\System.Web.WebPages.Deployment.xml
+D:\桌面\custom\custom\bin\System.Web.WebPages.Razor.xml
+D:\桌面\custom\custom\bin\Antlr3.Runtime.pdb
+D:\桌面\custom\custom\bin\EntityFramework.xml
+D:\桌面\custom\custom\bin\EntityFramework.SqlServer.xml
+D:\桌面\custom\custom\bin\Microsoft.AspNet.Identity.Core.xml
+D:\桌面\custom\custom\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\桌面\custom\custom\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\桌面\custom\custom\bin\Microsoft.Owin.xml
+D:\桌面\custom\custom\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\桌面\custom\custom\bin\Microsoft.Owin.Security.xml
+D:\桌面\custom\custom\bin\Microsoft.Owin.Security.Facebook.xml
+D:\桌面\custom\custom\bin\Microsoft.Owin.Security.Cookies.xml
+D:\桌面\custom\custom\bin\Microsoft.Owin.Security.OAuth.xml
+D:\桌面\custom\custom\bin\Microsoft.Owin.Security.Google.xml
+D:\桌面\custom\custom\bin\Microsoft.Owin.Security.Twitter.xml
+D:\桌面\custom\custom\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\桌面\custom\custom\bin\System.Web.Http.Owin.xml
+D:\桌面\custom\custom\obj\Release\custom.dll
+D:\桌面\custom\custom\obj\Release\custom.pdb
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\roslyn\csc.exe
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\roslyn\vbc.exe
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\roslyn\VBCSCompiler.exe
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\custom.dll.config
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\custom.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\custom.pdb
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Antlr3.Runtime.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\EntityFramework.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\EntityFramework.SqlServer.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.Owin.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.Owin.Security.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Newtonsoft.Json.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Owin.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\System.Net.Http.Formatting.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\System.Web.Helpers.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\System.Web.Http.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\System.Web.Http.Owin.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\System.Web.Http.WebHost.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\System.Web.Mvc.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\System.Web.Optimization.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\System.Web.Razor.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\System.Web.WebPages.Deployment.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\System.Web.WebPages.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\System.Web.WebPages.Razor.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\WebGrease.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Newtonsoft.Json.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\System.Net.Http.Formatting.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\System.Web.Helpers.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\System.Web.Http.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\System.Web.Http.WebHost.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\System.Web.Mvc.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\System.Web.Optimization.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\System.Web.Razor.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\System.Web.WebPages.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\System.Web.WebPages.Deployment.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\System.Web.WebPages.Razor.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Antlr3.Runtime.pdb
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\EntityFramework.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\EntityFramework.SqlServer.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.Owin.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.Owin.Security.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\bin\System.Web.Http.Owin.xml
+C:\Users\user\Desktop\custom俊熙\custom\custom\obj\Release\custom.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\custom俊熙\custom\custom\obj\Release\custom.csproj.CopyComplete
+C:\Users\user\Desktop\custom俊熙\custom\custom\obj\Release\custom.dll
+C:\Users\user\Desktop\custom俊熙\custom\custom\obj\Release\custom.pdb
+C:\Users\user\Desktop\custom俊熙\custom\custom\obj\Release\custom.csprojAssemblyReference.cache
+C:\Users\user\Desktop\custom_final\custom\custom\bin\roslyn\csc.exe
+C:\Users\user\Desktop\custom_final\custom\custom\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\user\Desktop\custom_final\custom\custom\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\user\Desktop\custom_final\custom\custom\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\roslyn\vbc.exe
+C:\Users\user\Desktop\custom_final\custom\custom\bin\roslyn\VBCSCompiler.exe
+C:\Users\user\Desktop\custom_final\custom\custom\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\user\Desktop\custom_final\custom\custom\bin\custom.dll.config
+C:\Users\user\Desktop\custom_final\custom\custom\bin\custom.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\custom.pdb
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Antlr3.Runtime.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\EntityFramework.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\EntityFramework.SqlServer.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.Owin.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.Owin.Security.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Newtonsoft.Json.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Owin.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\System.Net.Http.Formatting.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\System.Web.Helpers.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\System.Web.Http.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\System.Web.Http.Owin.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\System.Web.Http.WebHost.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\System.Web.Mvc.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\System.Web.Optimization.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\System.Web.Razor.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\System.Web.WebPages.Deployment.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\System.Web.WebPages.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\System.Web.WebPages.Razor.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\WebGrease.dll
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Newtonsoft.Json.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\System.Net.Http.Formatting.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\System.Web.Helpers.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\System.Web.Http.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\System.Web.Http.WebHost.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\System.Web.Mvc.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\System.Web.Optimization.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\System.Web.Razor.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\System.Web.WebPages.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\System.Web.WebPages.Deployment.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\System.Web.WebPages.Razor.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Antlr3.Runtime.pdb
+C:\Users\user\Desktop\custom_final\custom\custom\bin\EntityFramework.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\EntityFramework.SqlServer.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.Owin.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.Owin.Security.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\user\Desktop\custom_final\custom\custom\bin\System.Web.Http.Owin.xml
+C:\Users\user\Desktop\custom_final\custom\custom\obj\Release\custom.csprojAssemblyReference.cache
+C:\Users\user\Desktop\custom_final\custom\custom\obj\Release\custom.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\custom_final\custom\custom\obj\Release\custom.csproj.CopyComplete
+C:\Users\user\Desktop\custom_final\custom\custom\obj\Release\custom.dll
+C:\Users\user\Desktop\custom_final\custom\custom\obj\Release\custom.pdb
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\roslyn\csc.exe
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\roslyn\vbc.exe
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\roslyn\VBCSCompiler.exe
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\custom.dll.config
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\custom.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\custom.pdb
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Antlr3.Runtime.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\EntityFramework.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\EntityFramework.SqlServer.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.Owin.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.Owin.Security.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Newtonsoft.Json.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Owin.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\System.Net.Http.Formatting.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\System.Web.Helpers.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\System.Web.Http.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\System.Web.Http.Owin.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\System.Web.Http.WebHost.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\System.Web.Mvc.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\System.Web.Optimization.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\System.Web.Razor.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\System.Web.WebPages.Deployment.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\System.Web.WebPages.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\System.Web.WebPages.Razor.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\WebGrease.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Newtonsoft.Json.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\System.Net.Http.Formatting.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\System.Web.Helpers.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\System.Web.Http.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\System.Web.Http.WebHost.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\System.Web.Mvc.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\System.Web.Optimization.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\System.Web.Razor.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\System.Web.WebPages.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\System.Web.WebPages.Deployment.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\System.Web.WebPages.Razor.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Antlr3.Runtime.pdb
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\EntityFramework.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\EntityFramework.SqlServer.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.Owin.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.Owin.Security.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\bin\System.Web.Http.Owin.xml
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\obj\Release\custom.csprojAssemblyReference.cache
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\obj\Release\custom.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\obj\Release\custom.csproj.CopyComplete
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\obj\Release\custom.dll
+C:\Users\user\Desktop\新建文件夹 (2)\custom\custom\obj\Release\custom.pdb
+D:\新建文件夹\custom_new\custom\custom\bin\roslyn\csc.exe
+D:\新建文件夹\custom_new\custom\custom\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\新建文件夹\custom_new\custom\custom\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\新建文件夹\custom_new\custom\custom\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\新建文件夹\custom_new\custom\custom\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\新建文件夹\custom_new\custom\custom\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\新建文件夹\custom_new\custom\custom\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\新建文件夹\custom_new\custom\custom\bin\roslyn\System.Collections.Immutable.dll
+D:\新建文件夹\custom_new\custom\custom\bin\roslyn\System.Reflection.Metadata.dll
+D:\新建文件夹\custom_new\custom\custom\bin\roslyn\vbc.exe
+D:\新建文件夹\custom_new\custom\custom\bin\roslyn\VBCSCompiler.exe
+D:\新建文件夹\custom_new\custom\custom\bin\roslyn\VBCSCompiler.exe.config
+D:\新建文件夹\custom_new\custom\custom\bin\custom.dll.config
+D:\新建文件夹\custom_new\custom\custom\bin\custom.dll
+D:\新建文件夹\custom_new\custom\custom\bin\custom.pdb
+D:\新建文件夹\custom_new\custom\custom\bin\Antlr3.Runtime.dll
+D:\新建文件夹\custom_new\custom\custom\bin\EntityFramework.dll
+D:\新建文件夹\custom_new\custom\custom\bin\EntityFramework.SqlServer.dll
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.AspNet.Identity.Core.dll
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.Owin.dll
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.Owin.Security.Cookies.dll
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.Owin.Security.dll
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.Owin.Security.Facebook.dll
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.Owin.Security.Google.dll
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.Owin.Security.OAuth.dll
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.Owin.Security.Twitter.dll
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.Web.Infrastructure.dll
+D:\新建文件夹\custom_new\custom\custom\bin\MySql.Data.dll
+D:\新建文件夹\custom_new\custom\custom\bin\Newtonsoft.Json.dll
+D:\新建文件夹\custom_new\custom\custom\bin\Owin.dll
+D:\新建文件夹\custom_new\custom\custom\bin\System.Net.Http.Formatting.dll
+D:\新建文件夹\custom_new\custom\custom\bin\System.Web.Helpers.dll
+D:\新建文件夹\custom_new\custom\custom\bin\System.Web.Http.dll
+D:\新建文件夹\custom_new\custom\custom\bin\System.Web.Http.Owin.dll
+D:\新建文件夹\custom_new\custom\custom\bin\System.Web.Http.WebHost.dll
+D:\新建文件夹\custom_new\custom\custom\bin\System.Web.Mvc.dll
+D:\新建文件夹\custom_new\custom\custom\bin\System.Web.Optimization.dll
+D:\新建文件夹\custom_new\custom\custom\bin\System.Web.Razor.dll
+D:\新建文件夹\custom_new\custom\custom\bin\System.Web.WebPages.Deployment.dll
+D:\新建文件夹\custom_new\custom\custom\bin\System.Web.WebPages.dll
+D:\新建文件夹\custom_new\custom\custom\bin\System.Web.WebPages.Razor.dll
+D:\新建文件夹\custom_new\custom\custom\bin\WebGrease.dll
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\新建文件夹\custom_new\custom\custom\bin\Newtonsoft.Json.xml
+D:\新建文件夹\custom_new\custom\custom\bin\System.Net.Http.Formatting.xml
+D:\新建文件夹\custom_new\custom\custom\bin\System.Web.Helpers.xml
+D:\新建文件夹\custom_new\custom\custom\bin\System.Web.Http.xml
+D:\新建文件夹\custom_new\custom\custom\bin\System.Web.Http.WebHost.xml
+D:\新建文件夹\custom_new\custom\custom\bin\System.Web.Mvc.xml
+D:\新建文件夹\custom_new\custom\custom\bin\System.Web.Optimization.xml
+D:\新建文件夹\custom_new\custom\custom\bin\System.Web.Razor.xml
+D:\新建文件夹\custom_new\custom\custom\bin\System.Web.WebPages.xml
+D:\新建文件夹\custom_new\custom\custom\bin\System.Web.WebPages.Deployment.xml
+D:\新建文件夹\custom_new\custom\custom\bin\System.Web.WebPages.Razor.xml
+D:\新建文件夹\custom_new\custom\custom\bin\Antlr3.Runtime.pdb
+D:\新建文件夹\custom_new\custom\custom\bin\EntityFramework.xml
+D:\新建文件夹\custom_new\custom\custom\bin\EntityFramework.SqlServer.xml
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.AspNet.Identity.Core.xml
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.Owin.xml
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.Owin.Security.xml
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.Owin.Security.Facebook.xml
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.Owin.Security.Cookies.xml
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.Owin.Security.OAuth.xml
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.Owin.Security.Google.xml
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.Owin.Security.Twitter.xml
+D:\新建文件夹\custom_new\custom\custom\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\新建文件夹\custom_new\custom\custom\bin\System.Web.Http.Owin.xml
+D:\新建文件夹\custom_new\custom\custom\obj\Release\custom.csprojResolveAssemblyReference.cache
+D:\新建文件夹\custom_new\custom\custom\obj\Release\custom.dll
+D:\新建文件夹\custom_new\custom\custom\obj\Release\custom.pdb
+D:\custom\custom\bin\roslyn\csc.exe
+D:\custom\custom\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\custom\custom\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\custom\custom\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\custom\custom\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\custom\custom\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\custom\custom\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\custom\custom\bin\roslyn\System.Collections.Immutable.dll
+D:\custom\custom\bin\roslyn\System.Reflection.Metadata.dll
+D:\custom\custom\bin\roslyn\vbc.exe
+D:\custom\custom\bin\roslyn\VBCSCompiler.exe
+D:\custom\custom\bin\roslyn\VBCSCompiler.exe.config
+D:\custom\custom\bin\custom.dll.config
+D:\custom\custom\bin\custom.dll
+D:\custom\custom\bin\custom.pdb
+D:\custom\custom\bin\Antlr3.Runtime.dll
+D:\custom\custom\bin\EntityFramework.dll
+D:\custom\custom\bin\EntityFramework.SqlServer.dll
+D:\custom\custom\bin\Microsoft.AspNet.Identity.Core.dll
+D:\custom\custom\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\custom\custom\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\custom\custom\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\custom\custom\bin\Microsoft.Owin.dll
+D:\custom\custom\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\custom\custom\bin\Microsoft.Owin.Security.Cookies.dll
+D:\custom\custom\bin\Microsoft.Owin.Security.dll
+D:\custom\custom\bin\Microsoft.Owin.Security.Facebook.dll
+D:\custom\custom\bin\Microsoft.Owin.Security.Google.dll
+D:\custom\custom\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\custom\custom\bin\Microsoft.Owin.Security.OAuth.dll
+D:\custom\custom\bin\Microsoft.Owin.Security.Twitter.dll
+D:\custom\custom\bin\Microsoft.Web.Infrastructure.dll
+D:\custom\custom\bin\Newtonsoft.Json.dll
+D:\custom\custom\bin\Owin.dll
+D:\custom\custom\bin\System.Net.Http.Formatting.dll
+D:\custom\custom\bin\System.Web.Helpers.dll
+D:\custom\custom\bin\System.Web.Http.dll
+D:\custom\custom\bin\System.Web.Http.Owin.dll
+D:\custom\custom\bin\System.Web.Http.WebHost.dll
+D:\custom\custom\bin\System.Web.Mvc.dll
+D:\custom\custom\bin\System.Web.Optimization.dll
+D:\custom\custom\bin\System.Web.Razor.dll
+D:\custom\custom\bin\System.Web.WebPages.Deployment.dll
+D:\custom\custom\bin\System.Web.WebPages.dll
+D:\custom\custom\bin\System.Web.WebPages.Razor.dll
+D:\custom\custom\bin\WebGrease.dll
+D:\custom\custom\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\custom\custom\bin\Newtonsoft.Json.xml
+D:\custom\custom\bin\System.Net.Http.Formatting.xml
+D:\custom\custom\bin\System.Web.Helpers.xml
+D:\custom\custom\bin\System.Web.Http.xml
+D:\custom\custom\bin\System.Web.Http.WebHost.xml
+D:\custom\custom\bin\System.Web.Mvc.xml
+D:\custom\custom\bin\System.Web.Optimization.xml
+D:\custom\custom\bin\System.Web.Razor.xml
+D:\custom\custom\bin\System.Web.WebPages.xml
+D:\custom\custom\bin\System.Web.WebPages.Deployment.xml
+D:\custom\custom\bin\System.Web.WebPages.Razor.xml
+D:\custom\custom\bin\Antlr3.Runtime.pdb
+D:\custom\custom\bin\EntityFramework.xml
+D:\custom\custom\bin\EntityFramework.SqlServer.xml
+D:\custom\custom\bin\Microsoft.AspNet.Identity.Core.xml
+D:\custom\custom\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\custom\custom\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\custom\custom\bin\Microsoft.Owin.xml
+D:\custom\custom\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\custom\custom\bin\Microsoft.Owin.Security.xml
+D:\custom\custom\bin\Microsoft.Owin.Security.Facebook.xml
+D:\custom\custom\bin\Microsoft.Owin.Security.Cookies.xml
+D:\custom\custom\bin\Microsoft.Owin.Security.OAuth.xml
+D:\custom\custom\bin\Microsoft.Owin.Security.Google.xml
+D:\custom\custom\bin\Microsoft.Owin.Security.Twitter.xml
+D:\custom\custom\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\custom\custom\bin\System.Web.Http.Owin.xml
+D:\custom\custom\obj\Release\custom.csprojAssemblyReference.cache
+D:\custom\custom\obj\Release\custom.csproj.CoreCompileInputs.cache
+D:\custom\custom\obj\Release\custom.csproj.CopyComplete
+D:\custom\custom\obj\Release\custom.dll
+D:\custom\custom\obj\Release\custom.pdb

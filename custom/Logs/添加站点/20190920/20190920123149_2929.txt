@@ -1,0 +1,1 @@
+操作失败；You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order (name, quantity) values ('鸡蛋','2')' at line 1

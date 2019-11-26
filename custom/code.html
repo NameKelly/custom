@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewpoint" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0" />
+    <title>取货码</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="Scripts/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery.qrcode.js" type="text/javascript"></script>
+    <script src="Scripts/qrcode.js" type="text/javascript"></script>
+    <script src="Scripts/utf.js" type="text/javascript"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .code {
+            width: 600px;
+            position: absolute;
+            margin-left: -300px;
+            margin-top: -450px;
+            top: 50%;
+            left: 50%;
+        }
+
+        .txt {
+            margin-top: 30px;
+        }
+
+        .text {
+            font-size: 45px;
+            line-height: 120px;
+            color: #808080
+        }
+
+        .date {
+            font-size: 40px;
+            line-height: 80px;
+            color: #808080
+        }
+    </style>
+</head>
+<body>
+
+
+    <!--<header>
+        <figure><img src="img\back.png" onclick="back()"></figure>
+        <figcaption>取货码</figcaption>
+        <figure class="img1"><img src="img\more.png"></figure>
+    </header>-->
+    <div class="code">
+        <p class="text">已绑定，扫描二维码即可消费</p>
+        <div id="qrcodeTable"></div>
+        <div class="txt">
+            <p class="date"><span>申请时间：</span><span id="time1"></span></p>
+            <p class="date"><span>有效时间：</span><span id="time2"></span></p>
+        </div>
+    </div>
+    <script>
+
+        window.onload = function () {
+            var url = location.search; //获取url中"?"符后的字串 ('?modFlag=business&role=1')
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1); //substr()方法返回从参数值开始到结束的字符串；
+                var strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = (strs[i].split("=")[1]);
+                }
+                console.log("参数", theRequest.data); //此时的theRequest就是我们需要的参数；
+                var codeArr = theRequest.data.split(',');
+                let order_id = codeArr[0];
+
+                QRcode(order_id, '', '');
+                select_QRCode(order_id);
+            }
+            //QRcode('test')
+        }
+
+        //查看二维码有效时间
+        function select_QRCode(order_id) {
+
+            $.ajax({
+                type: "post",
+                url: "api/QRCode",
+                data: { order_id: order_id },
+
+                success: function (data) {
+
+                    let info = JSON.parse(data);
+
+                    let application_Time = document.getElementById('time1');
+                    let effective_Time = document.getElementById('time2');
+                    application_Time.innerHTML = info.data[0].order_date.replace(/-/g, "/").replace(/T/g, " ")
+                    effective_Time.innerHTML = info.data[0].getgoods_end.replace(/-/g, "/").replace(/T/g, " ")
+
+                }
+            });
+        }
+        function QRcode(order_id) {
+
+            jQuery('#qrcodeTable').qrcode({
+                render: "canvas",
+                text: order_id,
+                width: "600",
+                height: "600",
+            });
+        }
+        function back() {
+            window.location.href = "./my_order.html";
+        }
+
+    </script>
+
+</body>
+
+</html>

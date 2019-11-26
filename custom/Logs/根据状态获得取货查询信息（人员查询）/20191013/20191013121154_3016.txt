@@ -1,0 +1,1 @@
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where order_id not in ( select postID from tab_mall_tran where state='已提货'' at line 1

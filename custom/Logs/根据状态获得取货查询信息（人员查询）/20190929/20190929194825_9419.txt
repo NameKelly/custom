@@ -1,0 +1,1 @@
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= '1' and date = '2019/9/29 19:48:19'  group by id' at line 1

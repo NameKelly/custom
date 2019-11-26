@@ -1,0 +1,58 @@
+﻿*{margin: 0;
+padding: 0;}
+
+html,body{width: 100%;
+			height: 100%;}
+
+header{width: 100%;
+		height: 120px;
+		display: flex;
+		background-color: #f2f2f2;
+		font-size: 52px;}
+section{width: 100%;height: 80%;text-align: center;}
+.time{width: 90%;
+	margin-top: 30px;
+	height: 63px;
+	background-image: url(./img/tubiao.png);
+	background-repeat: no-repeat;
+	background-size: 70px 50px;
+	background-position-y: center;
+	background-position-x: 15px;
+	text-align: center;
+	font-size: 35px;
+	color: #cccccc;
+	border: 1px solid}
+#select{width: 80%;
+		margin: 30px auto 20px;
+		text-align: center;}
+#select td{font-size: 55px;border-style: none;}
+
+.selected{color: #169bd5;
+			background-image: url(./img/line.png);
+			background-size: 75%;
+			background-repeat: no-repeat;
+			background-position-x:center;
+			background-position-y:45px;}
+.tb{width: 85%;
+	font-size: 40px;
+	border: 1px solid #cccccc;
+	text-align: center;
+	margin: 70px auto;
+	table-layout: fixed;}
+caption{font-size: 45px;
+		color: #169bd5;
+		text-align: left;}
+table .weight{font-weight: bolder;color: black;}
+table .light{color: #cccccc;}
+table .food{color: #169bd5}
+.tb td{padding: 13px;
+	width: 30%;
+	border: 1px solid #cccccc;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 38px;
+	white-space: nowrap;}
+.tb2 td{}
+p{margin-bottom: 20px}
+
+table .count{color: orange}
