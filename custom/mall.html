@@ -19,11 +19,12 @@
     <script src="Scripts/Convert_Pinyin.js" type="text/javascript"></script>
     <script src="Scripts/countDown.js" type="text/javascript"></script>
     <script src="Scripts/noZoom.js" type="text/javascript"></script>
-    <!--<script type="text/javascript" src="https://cdn.bootcss.com/vConsole/3.3.0/vconsole.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/vConsole/3.3.0/vconsole.min.js"></script>
+    <script src="Scripts/swiper.min.js" type="text/javascript"></script>
     <script>
         var vConsole = new VConsole();
         console.log('Hello world');
-    </script>-->
+    </script>
 
 
     <style>
@@ -57,16 +58,17 @@
 
 </head>
 <body id="body">
-    <!--<header>
+    <div id="bigBox">
+        <!--<header>
         <figure><img src="img/back.png"></figure>
         <figcaption>商城</figcaption>
         <figure class="img1"><img src="img/more.png"></figure>
     </header>-->
-    <div id="tab" class="swiper-container">
-        <ul id="list" class="swiper-wrapper">
-            <li class="swiper-slide" id="myOrder">我的订单</li>
+        <div id="tab" class="swiper-container">
+            <ul id="list" class="swiper-wrapper">
+                <li class="swiper-slide" id="myOrder">我的订单</li>
 
-            <!--<li class="liactive swiper-slide">肉类</li> 
+                <!--<li class="liactive swiper-slide">肉类</li>
             <li class="swiper-slide">菜类</li>
             <li class="swiper-slide">饮料类</li>
             <li class="swiper-slide">水果类</li>
@@ -76,61 +78,58 @@
             <li class="swiper-slide">水果类</li>
             <li class="swiper-slide">我的订单</li>-->
 
-        </ul>
+            </ul>
+        </div>
+        <div class="clear"></div>
+        <section id="section">
+            <!-- 肉类 -->
+            <div class="show divclass order">
+
+            </div>
+
+            <!-- 蔬菜类 -->
+            <div class="divclass order">
+
+            </div>
+
+            <!-- 饮料 -->
+            <div class="divclass order">
+
+            </div>
+
+            <!-- 水果 -->
+            <div class="divclass order">
+
+            </div>
+
+            <!--我的订单-->
+            <div class="divclass order">
+
+            </div>
+            <!--add-->
+            <div class="divclass order"></div>
+            <div class="divclass order"></div>
+            <div class="divclass order"></div>
+            <div class="divclass order"></div>
+            <div class="divclass order"></div>
+
+            <div class="divclass order"></div>
+            <div class="divclass order"></div>
+            <div class="divclass order"></div>
+            <div class="divclass order"></div>
+            <div class="divclass order"></div>
+
+            <div class="divclass order"></div>
+            <div class="divclass order"></div>
+            <div class="divclass order"></div>
+            <div class="divclass order"></div>
+            <div class="divclass order"></div>
+            <div class="divclass order"></div>
+        </section>
+        <footer>
+            <input type="button" name="" value="前往下单" onclick="go_order2()">
+        </footer>
     </div>
-    <div class="clear"></div>
-
-    <section id="section">
-        <!-- 肉类 -->
-        <div class="show divclass order">
-
-        </div>
-
-        <!-- 蔬菜类 -->
-        <div class="divclass order">
-
-        </div>
-
-        <!-- 饮料 -->
-        <div class="divclass order">
-
-        </div>
-
-        <!-- 水果 -->
-        <div class="divclass order">
-
-        </div>
-
-        <!--我的订单-->
-        <div class="divclass order">
-
-        </div>
-        <!--add-->
-        <div class="divclass order"></div>
-        <div class="divclass order"></div>
-        <div class="divclass order"></div>
-        <div class="divclass order"></div>
-        <div class="divclass order"></div>
-
-        <div class="divclass order"></div>
-        <div class="divclass order"></div>
-        <div class="divclass order"></div>
-        <div class="divclass order"></div>
-        <div class="divclass order"></div>
-
-        <div class="divclass order"></div>
-        <div class="divclass order"></div>
-        <div class="divclass order"></div>
-        <div class="divclass order"></div>
-        <div class="divclass order"></div>
-        <div class="divclass order"></div>
-    </section>
-
-
-
-    <footer>
-        <input type="button" name="" value="前往下单" onclick="go_order2()">
-    </footer>
     <script type="text/javascript">
         ////跳转参数
         //var url = location.search; //获取url中"?"符后的字串 ('?modFlag=business&role=1')
@@ -149,6 +148,25 @@
         //    li[4].className = theRequest.data;
         //    li_content[4].style.display = 'block'
         //}
+        $(document).ready(function () {
+            var code = GetQueryString("code") || myStorage.getItem('code');
+            //var code = GetQueryString("code");
+
+            ////本地测试       
+            //select_menuName();
+
+            if (code != null && code.toString().length > 1) {
+                var jsonObj = {
+                    code: code
+                };
+                poststr = JSON.stringify(jsonObj);
+                mj_ajax("api/getData", "json", poststr, callback_getdata);
+            }
+            else {
+                       
+            }
+
+        });
 
         function go_order() {
             console.log("前往下单");
@@ -276,27 +294,6 @@
             }
             send_arr(result);
         }
-
-
-        $(document).ready(function () {
-            var code = GetQueryString("code") || myStorage.getItem('code');
-            //var code = GetQueryString("code");
-
-             ////本地测试              
-             //select_menuName();
-            if (code != null && code.toString().length > 1) {
-                var jsonObj = {
-                    code: code
-                };
-                poststr = JSON.stringify(jsonObj);
-                mj_ajax("api/getData", "json", poststr, callback_getdata);
-            }
-            else {             
-                //本地测试              
-                //select_menuName();            
-            }
-
-        });
         function callback_getdata(data) {
             //myStorage.setItem('mallPhone', '13686948977');
             //服务器上要删除↑
@@ -341,12 +338,17 @@
                 success: function (data) {
                     let datas = JSON.parse(data);
                     let menu = datas.data;
-                    console.log("menu", data,menu);
-                    menu.map(function (v, index) {
-                        console.log(v.goods_type)
-                        addMenu(v.goods_type, index);
-                        select_menu(v.goods_type)
-                    })
+                    console.log("menu", data, menu);
+                    if (menu != '') {
+                        menu.map(function (v, index) {
+                            console.log(v.goods_type)
+                            addMenu(v.goods_type, index);
+                            select_menu(v.goods_type)
+                        })
+                    } else {
+                        noData('bigBox','key2')
+                    }
+                   
                 }
             });
         }
@@ -430,53 +432,11 @@
                     }
                     
 
-                    //if (key == "肉") {
-                    //    //getList_1(meat_List);//肉类
-                    //    if (meat_List.length) {
-                    //        for (let i = 0; i < meat_List.length; i++) {
-                    //            getList_1(meat_List, i);
-                    //        }
-                    //    } else {
-                    //        noData('meat');
-                    //    }
-                    //}
-                    //if (key == "菜") {
-                    //    //getList_2(meat_List);//菜类
-                    //    if (meat_List.length) {
-                    //        for (let i = 0; i < meat_List.length; i++) {
-                    //            getList_2(meat_List, i);
-                    //        }
-                    //    } else {
-                    //        noData('vegetable');
-                    //    }
-                    //}
-                    //if (key == "饮料") {
-                    //    //getList_3(meat_List);//饮料类
-                    //    if (meat_List.length) {
-                    //        for (let i = 0; i < meat_List.length; i++) {
-                    //            getList_3(meat_List, i);
-                    //        }
-                    //    } else {
-                    //        noData('drink');
-                    //    }
-                    //}
-                    //if (key == "水果") {
-                    //    //getList_4(meat_List);//水果类
-                    //    if (meat_List.length) {
-                    //        for (let i = 0; i < meat_List.length; i++) {
-                    //            getList_4(meat_List, i);
-                    //        }
-                    //    } else {
-                    //        noData('fruit');
-                    //    }
-                    //}
-
-
                 }
             });
         }
 
-        function noData(key) {
+        function noData(key,key2) {
             console.log("暂无数据", key);
 
             //if (key == 'meat') {
@@ -492,11 +452,19 @@
             //    var type = document.getElementById('fruit');
             //}
             var type = document.getElementById(key);
-            console.log("type",type)
+            console.log("type", type)
+            if (key2) {
+                type.innerHTML = '<div class="noData" style="margin-top:100px;"><img class="noDataItem" src="./img/noData.png"/><p class="noSeeText">暂无数据</p></div>';
+                return;
+            }
+            
+           
             let div = document.createElement('div');
             div.innerHTML = '<div class="noData" style="margin-top:100px;"><img class="noDataItem" src="./img/noData.png"/><p class="noSeeText">暂无数据</p></div>';
             type.appendChild(div);
+           
         }
+        
         function getList(meat_List, ids, key,i) {
             console.log(meat_List, ids, key)
             let meat = document.getElementById(ids);
@@ -546,12 +514,9 @@
             let start_2 = new Date(getgoods_start).getTime();
             let getgoods_end = meat_List[i].getgoods_end.replace(/-/g, "/").replace(/T/g, " ");
             let end_2 = new Date(getgoods_end).getTime();
-            //let djsArr = [];
-            //let djsArr_2 = [];
+         
             if (start <= now && now < end) {
-                //console.log("daojishi倒计时", start, now, end);
-                //djsArr.push({ time: book_end });
-                //daojishi(djsArr, meat, i);
+                
                 let txt = meat.getElementsByClassName('txt');
                 txt[i].className = 'txt txt2'
                 txt[i].innerHTML = '预订倒计时';
@@ -563,9 +528,7 @@
 
 
             } else if (now <= start_2 && now >= end) {
-                //console.log("购买时间倒计时", end, now, start_2);
-                //djsArr_2.push({ time: getgoods_start });
-                //daojishi(djsArr_2, meat, i);
+               
                 let txt = meat.getElementsByClassName('txt');
                 txt[i].className = 'txt txt2'
                 txt[i].innerHTML = '离正式开售时间';
@@ -588,309 +551,6 @@
             }
 
         }
-
-        function getList_1(meat_List, i) {
-            //alert("getList_1");
-            var meat = document.getElementById('meat');
-            var money = meat.getElementsByClassName('money');
-            var images = meat.getElementsByClassName('img');
-            var names = meat.getElementsByClassName('name');
-            var time = meat.getElementsByClassName('time');
-            var kg = meat.getElementsByClassName('kg');
-
-            var table = document.createElement('table');
-            table.className = "td1";
-            table.innerHTML = "<tr>\n" +
-                "\t\t\t<td><img src=\"\" class=\"img\" style='height: 270px;padding-left: 20px;'></td>\n" +
-                "\t\t\t<td>\n" +
-                "\t\t\t\t<p><span class=\"name\"></span></p><br>\n" +
-                "\t\t\t\t<p><span class=\"money\"></span><span>元/<span class='kg'></span></span></p></td>\n" +
-                "\t\t\t<td><div class=\"yd counttime2\"><p class='txt'>预订</p><p style='font-weight: bolder;font-size: 35px;'><span class='time'></span></p></div>\n" +
-                "\t\t\t\t<div class=\"count\">\n" +
-                "\t\t\t\t<input type=\"button\" class=\"jian countnormal\" value=\"-\" onclick=\"jian(this)\">\n" +
-                "\t\t\t\t<input type=\"text\" value=\"0\" class=\"countnormal countNum\">\n" +
-                "\t\t\t\t<input type=\"button\" class=\"jia countnormal\" value=\"+\" onclick=\"jia(this)\">\n" +
-                "\t\t\t\t</div>\n" +
-                "\t\t\t</td>\n" +
-                "\t\t</tr>";
-
-            meat.appendChild(table);
-            money[i].innerText = meat_List[i].goods_price;
-            //images[i].src = "../NewConsume_mealticket/" + meat_List[i].PicPath;
-            //images[i].src = "../NewJMConsume/" + meat_List[i].PicPath;
-            images[i].src = "http://183.236.246.246:9230/NewJMConsume_Mall/" + meat_List[i].PicPath;
-            names[i].innerText = meat_List[i].goods_name;
-            names[i].title = meat_List[i].postID;
-
-            //time[i].innerText = meat_List[i].getgoods_end.replace('T',' ');
-            kg[i].innerText = meat_List[i].unit;
-
-            //预定倒计时
-            let book_start = meat_List[i].book_start.replace(/-/g, "/").replace(/T/g, " ");
-            let start = new Date(book_start).getTime();
-            let book_end = meat_List[i].book_end.replace(/-/g, "/").replace(/T/g, " ");
-            let end = new Date(book_end).getTime();
-            let nowDate = getNowFormatDate();
-            let now = new Date(nowDate).getTime();
-
-            //离正式开售时间
-            let getgoods_start = meat_List[i].getgoods_start.replace(/-/g, "/").replace(/T/g, " ");
-            let start_2 = new Date(getgoods_start).getTime();
-            let getgoods_end = meat_List[i].getgoods_end.replace(/-/g, "/").replace(/T/g, " ");
-            let end_2 = new Date(getgoods_end).getTime();
-            //let djsArr = [];
-            //let djsArr_2 = [];
-            if (start <= now && now <= end) {
-                //console.log("daojishi倒计时", start, now, end);
-                //djsArr.push({ time: book_end });
-                //daojishi(djsArr, meat, i);
-                let txt = meat.getElementsByClassName('txt');
-                txt[i].innerHTML = '预订';
-                txt[i].parentNode.className = 'yd counttime1';
-
-            } else if (now >= start_2 && now <= end_2) {
-                //console.log("购买时间倒计时", end, now, start_2);
-                //djsArr_2.push({ time: getgoods_start });
-                //daojishi(djsArr_2, meat, i);
-                let txt = meat.getElementsByClassName('txt');
-                txt[i].innerHTML = '购买';
-                txt[i].parentNode.className = 'yd counttime1';
-
-            } else {
-
-            }
-
-            ////样式
-            //if (time[i].innerText == '') {
-            //    time[i].parentNode.style.display = 'none';
-            //    time[i].parentNode.parentNode.firstChild.className = 'recive_p';
-            //    //console.log("样式", time[index].parentNode)
-            //}
-
-        }
-        function getList_2(meat_List, i) {
-            //alert("getList_2");
-            //alert(meat_List[0].goods_name);
-
-            var meat = document.getElementById('vegetable');
-            var money = meat.getElementsByClassName('money');
-            var images = meat.getElementsByClassName('img');
-            var names = meat.getElementsByClassName('name');
-            var time = meat.getElementsByClassName('time');
-            var kg = meat.getElementsByClassName('kg');
-
-
-            var table = document.createElement('table');
-            table.className = "td1";
-            table.innerHTML = "<tr>\n" +
-                "\t\t\t<td><img src=\"\" class=\"img\" style='height: 270px;padding-left: 20px;'></td>\n" +
-                "\t\t\t<td>\n" +
-                "\t\t\t\t<p><span class=\"name\"></span></p><br>\n" +
-                "\t\t\t\t<p><span class=\"money\"></span><span>元/<span class='kg'></span></span></p></td>\n" +
-                "\t\t\t<td><div class=\"yd counttime2\"><p class='txt'>预订</p><p style='font-weight: bolder;font-size: 35px;'><span class='time'></span></p></div>\n" +
-                "\t\t\t\t<div class=\"count\">\n" +
-                "\t\t\t\t<input type=\"button\" class=\"jian countnormal\" value=\"-\" onclick=\"jian(this)\">\n" +
-                "\t\t\t\t<input type=\"text\" value=\"0\" class=\"countnormal countNum\">\n" +
-                "\t\t\t\t<input type=\"button\" class=\"jia countnormal\" value=\"+\" onclick=\"jia(this)\">\n" +
-                "\t\t\t\t</div>\n" +
-                "\t\t\t</td>\n" +
-                "\t\t</tr>";
-
-
-            meat.appendChild(table);
-            money[i].innerText = meat_List[i].goods_price;
-            //images[i].src = "../NewConsume_mealticket/" + meat_List[i].PicPath;
-            //images[i].src = "../NewJMConsume/" + meat_List[i].PicPath;
-            images[i].src = "http://183.236.246.246:9230/NewJMConsume_Mall/" + meat_List[i].PicPath;
-            names[i].innerText = meat_List[i].goods_name;
-            names[i].title = meat_List[i].postID;
-            //time[i].innerText = meat_List[i].getgoods_end.replace('T', ' ');
-            kg[i].innerText = meat_List[i].unit;
-
-            //预定倒计时
-            let book_start = meat_List[i].book_start.replace(/-/g, "/").replace(/T/g, " ");
-            let start = new Date(book_start).getTime();
-            let book_end = meat_List[i].book_end.replace(/-/g, "/").replace(/T/g, " ");
-            let end = new Date(book_end).getTime();
-            //let now = new Date().getTime();
-            let nowDate = getNowFormatDate();
-            let now = new Date(nowDate).getTime();
-            //let djsArr = [];
-            //离正式开售时间
-            let getgoods_start = meat_List[i].getgoods_start.replace(/-/g, "/").replace(/T/g, " ");
-            let start_2 = new Date(getgoods_start).getTime();
-            let getgoods_end = meat_List[i].getgoods_end.replace(/-/g, "/").replace(/T/g, " ");
-            let end_2 = new Date(getgoods_end).getTime();
-            let djsArr_2 = [];
-            if (start <= now && now <= end) {
-                //console.log("daojishi倒计时", start, now, end);
-                //djsArr.push({ time: book_end });
-                //daojishi(djsArr, meat, i);
-                let txt = meat.getElementsByClassName('txt');
-                txt[i].innerHTML = '预订';
-                txt[i].parentNode.className = 'yd counttime1';
-
-            } else if (now >= start_2 && now <= end_2) {
-                //console.log("购买时间倒计时", end, now, start_2);
-                //djsArr_2.push({ time: getgoods_start });
-                //daojishi(djsArr_2, meat, i);
-                let txt = meat.getElementsByClassName('txt');
-                txt[i].innerHTML = '购买';
-                txt[i].parentNode.className = 'yd counttime1';
-
-            }
-
-
-
-
-        }
-        function getList_4(meat_List, i) {
-            //alert("getList_4");
-            var meat = document.getElementById('fruit');
-            var money = meat.getElementsByClassName('money');
-            var images = meat.getElementsByClassName('img');
-            var names = meat.getElementsByClassName('name');
-            var time = meat.getElementsByClassName('time');
-            var kg = meat.getElementsByClassName('kg');
-
-
-
-            var table = document.createElement('table');
-            table.className = "td1";
-            table.innerHTML = "<tr>\n" +
-                "\t\t\t<td><img src=\"\" class=\"img\" style='height: 270px;padding-left: 20px;'></td>\n" +
-                "\t\t\t<td>\n" +
-                "\t\t\t\t<p><span class=\"name\"></span></p><br>\n" +
-                "\t\t\t\t<p><span class=\"money\"></span><span>元/<span class='kg'></span></span></p></td>\n" +
-                "\t\t\t<td><div class=\"yd counttime2\"><p class='txt'>预订</p><p style='font-weight: bolder;font-size: 35px;'><span class='time'></span></p></div>\n" +
-                "\t\t\t\t<div class=\"count\">\n" +
-                "\t\t\t\t<input type=\"button\" class=\"jian countnormal\" value=\"-\" onclick=\"jian(this)\">\n" +
-                "\t\t\t\t<input type=\"text\" value=\"0\" class=\"countnormal countNum\">\n" +
-                "\t\t\t\t<input type=\"button\" class=\"jia countnormal\" value=\"+\" onclick=\"jia(this)\">\n" +
-                "\t\t\t\t</div>\n" +
-                "\t\t\t</td>\n" +
-                "\t\t</tr>";
-
-            meat.appendChild(table);
-            money[i].innerText = meat_List[i].goods_price;
-            //images[i].src = "../NewConsume_mealticket/" + meat_List[i].PicPath;
-            //images[i].src = "../NewJMConsume/" + meat_List[i].PicPath;
-            images[i].src = "http://183.236.246.246:9230/NewJMConsume_Mall/" + meat_List[i].PicPath;
-            names[i].innerText = meat_List[i].goods_name;
-            names[i].title = meat_List[i].postID;
-            //time[i].innerText = meat_List[i].getgoods_end.replace('T', ' ');
-            kg[i].innerText = meat_List[i].unit;
-
-            //预定倒计时
-            let book_start = meat_List[i].book_start.replace(/-/g, "/").replace(/T/g, " ");
-            let start = new Date(book_start).getTime();
-            let book_end = meat_List[i].book_end.replace(/-/g, "/").replace(/T/g, " ");
-            let end = new Date(book_end).getTime();
-
-            let nowDate = getNowFormatDate();
-            let now = new Date(nowDate).getTime();
-            //let djsArr = [];
-            //离正式开售时间
-            let getgoods_start = meat_List[i].getgoods_start.replace(/-/g, "/").replace(/T/g, " ");
-            let start_2 = new Date(getgoods_start).getTime();
-            let getgoods_end = meat_List[i].getgoods_end.replace(/-/g, "/").replace(/T/g, " ");
-            let end_2 = new Date(getgoods_end).getTime();
-            //let djsArr_2 = [];
-
-            if (start <= now && now <= end) {
-                //console.log("daojishi倒计时", start, now, end);
-                //djsArr.push({ time: book_end });
-                //daojishi(djsArr, meat, i);
-                let txt = meat.getElementsByClassName('txt');
-                txt[i].innerHTML = '预订';
-                txt[i].parentNode.className = 'yd counttime1';
-            } else if (now >= start_2 && now <= end_2) {
-                //console.log("购买时间倒计时", end, now, start_2);
-                //djsArr_2.push({ time: getgoods_start });
-                //daojishi(djsArr_2, meat, i);
-                let txt = meat.getElementsByClassName('txt');
-                txt[i].innerHTML = '购买';
-                txt[i].parentNode.className = 'yd counttime1';
-
-            }
-
-        }
-        function getList_3(meat_List, i) {
-            //alert("getList_3");
-            var meat = document.getElementById('drink');
-            var money = meat.getElementsByClassName('money');
-            var images = meat.getElementsByClassName('img');
-            var names = meat.getElementsByClassName('name');
-            var time = meat.getElementsByClassName('time');
-            var kg = meat.getElementsByClassName('kg');
-
-
-            var table = document.createElement('table');
-            table.className = "td1";
-            table.innerHTML = "<tr>\n" +
-                "\t\t\t<td><img src=\"\" class=\"img\" style='height: 270px;padding-left: 20px;'></td>\n" +
-                "\t\t\t<td>\n" +
-                "\t\t\t\t<p><span class=\"name\"></span></p><br>\n" +
-                "\t\t\t\t<p><span class=\"money\"></span><span>元/<span class='kg'></span></span></p></td>\n" +
-                "\t\t\t<td><div class=\"yd counttime2\"><p class='txt'>预订</p><p style='font-weight: bolder;font-size: 35px;'><span class='time'></span></p></div>\n" +
-                "\t\t\t\t<div class=\"count\">\n" +
-                "\t\t\t\t<input type=\"button\" class=\"jian countnormal\" value=\"-\" onclick=\"jian(this)\">\n" +
-                "\t\t\t\t<input type=\"text\" value=\"0\" class=\"countnormal countNum\">\n" +
-                "\t\t\t\t<input type=\"button\" class=\"jia countnormal\" value=\"+\" onclick=\"jia(this)\">\n" +
-                "\t\t\t\t</div>\n" +
-                "\t\t\t</td>\n" +
-                "\t\t</tr>";
-
-
-            meat.appendChild(table);
-
-            money[i].innerText = meat_List[i].goods_price;
-            //images[i].src = "../NewConsume_mealticket/" + meat_List[i].PicPath;
-            //images[i].src = "../NewJMConsume/" + meat_List[i].PicPath;
-            images[i].src = "http://183.236.246.246:9230/NewJMConsume_Mall/" + meat_List[i].PicPath;
-            names[i].innerText = meat_List[i].goods_name;
-            names[i].title = meat_List[i].postID;
-            //time[i].innerText = meat_List[i].getgoods_end.replace('T', ' ');
-            kg[i].innerText = meat_List[i].unit;
-
-            //预定倒计时
-            let book_start = meat_List[i].book_start.replace(/-/g, "/").replace(/T/g, " ");
-            let start = new Date(book_start).getTime();
-            let book_end = meat_List[i].book_end.replace(/-/g, "/").replace(/T/g, " ");
-            let end = new Date(book_end).getTime();
-            //let now = new Date().getTime();
-            let nowDate = getNowFormatDate();
-            let now = new Date(nowDate).getTime();
-            //let djsArr = [];
-            //离正式开售时间
-            let getgoods_start = meat_List[i].getgoods_start.replace(/-/g, "/").replace(/T/g, " ");
-            let start_2 = new Date(getgoods_start).getTime();
-            let getgoods_end = meat_List[i].getgoods_end.replace(/-/g, "/").replace(/T/g, " ");
-            let end_2 = new Date(getgoods_end).getTime();
-            let djsArr_2 = [];
-
-            if (start <= now && now <= end) {
-                //console.log("daojishi倒计时", start, now, end);
-                //djsArr.push({ time: book_end });
-                //daojishi(djsArr, meat, i);
-                let txt = meat.getElementsByClassName('txt');
-                txt[i].innerHTML = '预订';
-                txt[i].parentNode.className = 'yd counttime1';
-
-            } else if (now >= start_2 && now <= end_2) {
-                //console.log("购买时间倒计时", end, now, start_2);
-                //djsArr_2.push({ time: getgoods_start });
-                //daojishi(djsArr_2, meat, i);
-                let txt = meat.getElementsByClassName('txt');
-                txt[i].innerHTML = '购买';
-                txt[i].parentNode.className = 'yd counttime1';
-
-            }
-
-
-        }
-
-
         function counttime(type) {
 
         }
@@ -919,91 +579,7 @@
                 console.log('111', key, date, DownTime(date))
                 document.getElementById(key).innerHTML = DownTime(date)
             }, 1000);
-        }
-        //倒计时方法
-        function timer(DateStr) {
-            alert('daojishi');
-            var date = {};
-            //结束时间
-            var endDate = new Date(DateStr);
-            //当前时间
-            var nowDate = new Date();
-            //相差的总秒数
-            var totalSeconds = parseInt((endDate - nowDate) / 1000);
-            //天数
-            var days = Math.floor(totalSeconds / (60 * 60 * 24));
-            //取模（余数）
-            var modulo = totalSeconds % (60 * 60 * 24);
-            //小时数
-            var hours = Math.floor(modulo / (60 * 60));
-            modulo = modulo % (60 * 60);
-            //分钟
-            var minutes = Math.floor(modulo / 60);
-            //秒
-            var seconds = modulo % 60;
-            date = {
-                days: days,
-                hours: hours,
-                minutes: minutes,
-                seconds: seconds,
-            }
-            return date
-        }
-        function daojishi(array, type, index) {
-            var set = setInterval(function () {
-                array.map(function (v, index) {
-                    var date = timer(v.time);
-                    var day = date.days;
-                    var hours = date.hours;
-                    var min = date.minutes;
-                    var sec = date.seconds;
-                    //判断时间有没有为0
-                    if (date.days <= 0 && date.hours <= 0 && date.minutes <= 0 && date.seconds <= 0) {
-                        v.str = "00:00:00"
-                        //设置一个标志，如果全部为0，就可以关闭计时器
-                        v.realtime = 0;
-                        let flag = array.every(function (val, ind) { //苹果不兼容箭头函数
-                            return val.realtime == 0
-                        })
-                        if (flag) {
-                            clearInterval(set)
-                        }
-                    } else {
-                        if (hours < 10) {
-                            hours = '0' + hours;
-                        }
-                        if (min < 10) {
-                            min = '0' + min;
-                        }
-                        if (sec < 10) {
-                            sec = '0' + sec;
-                        }
-                        v.str = hours + ":" + min + ":" + sec
-                    }
-                })
-                // 这里拿到的array就会时刻更新
-                //console.log(array)
-
-                for (let i = 0; i < array.length; i++) {
-                    var time = type.getElementsByClassName('time');
-                    time[index].innerText = array[i].str;
-
-                    ////样式
-                    for (let j = 0; j < time.length; j++) {
-                        if (time[j].innerText == '') {
-                            time[j].parentNode.style.display = 'none';
-                            time[j].parentNode.parentNode.firstChild.className = 'recive_p';
-                            //console.log("样式", time[index].parentNode)
-                        }
-                    }
-
-
-                }
-
-                return array;
-            }, 1000);
-        }
-        
+        } 
         function jia(obj) {
             console.log("加", obj.parentNode.parentNode.firstChild.getElementsByClassName('time')[0]);
             console.log("counttime", obj.parentNode.parentNode.firstChild)
@@ -1030,8 +606,8 @@
         }
 
     </script>
-    <!--swiper菜单-->
-    <script src="Scripts/swiper.min.js" type="text/javascript"></script>
+   
+   
     <script>
 
         function swiper() {
