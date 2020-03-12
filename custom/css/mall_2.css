@@ -10,8 +10,13 @@ input {
 html, body {
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
-
+#bigBox {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
 header {
     width: 100%;
     height: 150px;
@@ -56,12 +61,15 @@ li {
 }
 
 div {
-    margin: 15px;
+    /*margin: 15px;*/
+    /*margin-top:10px*/
 }
 
 section {
-    height: 75%;
+    height: 85%;
     overflow: scroll;
+    margin-bottom:150px;
+    padding-left:10px
 }
 
 .divclass {
@@ -152,24 +160,25 @@ section {
     display: block;
 }
 
-
-
-footer {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    text-align: center;
+    .footer {
+    position: absolute !important;
+    bottom: 10px !important;
+    width: 100% !important;
+    text-align: center !important;
+    z-index: 999 !important;
+    margin: 0 !important
 }
 
-    footer input {
-        width: 80%;
-        background-color: #199ed8;
-        font-size: 50px;
-        padding: 10px;
-        color: white;
-        border-radius: 20px
-    }
-
+        .footer input {
+            width: 80% !important;
+            background-color: #199ed8 !important;
+            font-size: 50px !important;
+            padding: 10px !important;
+            color: white !important;
+            -webkit-border-radius: 20px !important;
+            z-index: 999 !important;
+            margin-top: 100px !important;
+        }        
 .sort {
     color: #cccccc;
     font-size: 40px;
@@ -197,3 +206,8 @@ img {
     width: 350px;
     height: 320px;
 }
+table{
+    width:100%;
+    table-layout:fixed
+}
+
