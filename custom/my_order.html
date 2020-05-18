@@ -3,6 +3,7 @@
 <head>
     <title>我的订单</title>
     <meta name="viewpoint" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
     <!--<meta content="telephone=no" name="format-detection" />
     <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui" />-->
     <link rel="stylesheet" type="text/css" href="./css/style.css">
@@ -16,11 +17,11 @@
     <script src="Scripts/myStorage.js" type="text/javascript"></script>
     <script src="Scripts/jquery.uiAlertView.js" type="text/javascript"></script>
     <script src="Scripts/noZoom.js" type="text/javascript"></script>
-    <!--<script type="text/javascript" src="https://cdn.bootcss.com/vConsole/3.3.0/vconsole.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/vConsole/3.3.0/vconsole.min.js"></script>
     <script>
         var vConsole = new VConsole();
-        console.log('Hello world');
-    </script>-->
+        console.log('Hello world???');
+    </script>
 
     <style>
         .noData {
@@ -64,165 +65,163 @@
         var dqh;
         var yqx;
         var ywc;
-        
-        window.onload = function () {                      
+
+        window.onload = function () {
             select_myOrder("待取货");
-            //select_myOrder("已取消");
-            //select_myOrder("已完成");
-            ////select_myOrder("已下单");                             
+
         }
 
         function noData(dqh, ywc, yqx) {
-            if (dqh == '没有待取货的订单！' && ywc == '没有已完成的订单！' && yqx == '没有已取消的订单！') {
-                let div = document.createElement('div');
+            if (dqh == '没有待取货的订单！' && ywc == '没有已完成的订单！') {
+                var div = document.createElement('div');
                 div.innerHTML = '<div class="noData" style="margin-top:100px;"><img class="noSeeItem" src="./img/noData.png"/><p id="noSeeText" class="noSeeText">暂无数据</p></div>';
                 $("#body").html(div);
                 document.getElementById('noSeeText').innerHTML = '暂无订单';
             }
-            
+
         }
         function back() {
             window.location.href = "./mall.html";
         }
         //查看订单
         function select_myOrder(state) {
- 
-            let mallPhone = myStorage.getItem('mallPhone');
+
+            var mallPhone = myStorage.getItem('mallPhone');
             $.ajax({
                 type: "post",
                 url: "api/select_myOrder",
                 data: {
                     state: state,
                     phone: mallPhone
-                    //phone: "13686948977"
-                    //phone:"15728274563"
+                    //phone: "13534592045"//测试
                 },
                 success: function (data) {
-                    //let dataJson = JSON.parse(data);
-                    //let dataJson = eval("(" + data + ")");
-                    let dataJson = $.parseJSON(data);
+                    //var dataJson = JSON.parse(data);
+                    //var dataJson = eval("(" + data + ")");
+                    var dataJson = $.parseJSON(data);
                     console.log('api/select_myOrder', dataJson, dataJson.msg);
-                    let dataArr = dataJson.data
+                    var dataArr = dataJson.data
                     console.log(state, dataArr);
                     if (state == "待取货") {
-                       
+
                         dqh = dataJson.msg;
                         select_myOrder('已完成')
-                        newArr(dataArr.reverse(), '待取货');
-                       
+                        if (dataArr) newArr(dataArr.reverse(), '待取货');
+
                     } else if (state == "已完成") {
-                       
+
                         ywc = dataJson.msg;
-                        select_myOrder('已取消')
-                        newArr(dataArr.reverse(), '已完成');
-                        
+                        //select_myOrder('已取消')
+                        noData(dqh, ywc)
+                        if (dataArr) newArr(dataArr.reverse(), '已完成');
+
                     } else if (state == "已取消") {
-                      
+
                         yqx = dataJson.msg;
                         noData(dqh, ywc, yqx)
-                        newArr(dataArr.reverse(), '已取消');
-                        
-                       
+                        if (dataArr) newArr(dataArr.reverse(), '已取消');
                     } else if (state == '已下单') {
                         console.log('已下单data', data);
-                    }                    
+                    }
                 }
-            });           
+            });
         }
         function show_order(dataArr) {
             var box = document.getElementById('box');
-            let newArr = [];
-            for (let j = 0; j < dataArr.length; j++) {
+            var newArr = [];
+            for (var j = 0; j < dataArr.length; j++) {
 
-                let box = document.getElementById('box');
-                let add = '';
-                add += "<div class='divclass'><table ><tr><td class='time'><span class='date'></span>的订单</td><td class='total'>Total：<span class='total_num'></span></td></tr><tbody id='tbody_1' class='tbody_1'></tbody><tfoot> <tr><td class='button' colspan='2'><div class='recive'><p>取货码</p><p class='qhm'></p></div><div class='withdraw'><p>取消预订</p><p class='djs'></p></div></td></tr></tfoot></table ></div>"
-                let div = document.createElement('div');
+                var box = document.getElementById('box');
+                var add = '';
+                add += "<div class='divclass'><table ><tr><td class='time'><span class='date'></span>的订单</td><td class='total'>Total：<span class='total_num'></span></td></tr><tbody id='tbody_1' class='tbody_1'></tbody><tfoot> <tr><td class='button' colspan='2'><div class='recive'><p>取货码</p><p class='qhm'></p></div><div class='withdraw' style='display:none'><p>取消预订</p><p class='djs'></p></div></td></tr></tfoot></table ></div>"
+                var div = document.createElement('div');
                 div.innerHTML = add;
                 box.appendChild(div);
                 newArr = dataArr[j].data;
                 console.log("待取货数据", dataArr, newArr);
                 //展示数据
-                let total_num = box.getElementsByClassName('total_num');
-                let date = box.getElementsByClassName('date')[j];
+                var total_num = box.getElementsByClassName('total_num');
+                var date = box.getElementsByClassName('date')[j];
                 //total_num.innerHTML = (dataArr[j].data[0].money * 1).toFixed(2);
                 date.innerHTML = dataArr[j].data[0].order_date.replace(/T/g, " ");
 
                 //取消预定倒计时
-                let withdraw = box.getElementsByClassName('withdraw');
-                let book_startArr = newArr.map(obj => { return obj.book_start.replace(/-/g, "/").replace(/T/g, " ") })
-                let book_startArr2 = newArr.map(obj => { return new Date(obj.book_start.replace(/-/g, "/").replace(/T/g, " ")).getTime() });
-                let book_startArr3 = book_startArr2.sort();
-                let book_endArr = newArr.map(obj => { return obj.book_end.replace(/-/g, "/").replace(/T/g, " ") })
-                let book_endArr2 = newArr.map(obj => { return new Date(obj.book_end.replace(/-/g, "/").replace(/T/g, " ")).getTime() });
-                let book_endArr3 = book_endArr2.sort();
+                var withdraw = box.getElementsByClassName('withdraw');
 
-                let getgoods_startArr = newArr.map(obj => { return obj.getgoods_start.replace(/-/g, "/").replace(/T/g, " ") })
-                let getgoods_startArr2 = newArr.map(obj => { return new Date(obj.getgoods_start.replace(/-/g, "/").replace(/T/g, " ")).getTime() });
-                let getgoods_startArr3 = getgoods_startArr2.sort();
-                let getgoods_endArr = newArr.map(obj => { return obj.getgoods_end.replace(/-/g, "/").replace(/T/g, " ") })
-                let getgoods_endArr2 = newArr.map(obj => { return new Date(obj.getgoods_end.replace(/-/g, "/").replace(/T/g, " ")).getTime() });
-                let getgoods_endArr3 = getgoods_endArr2.sort();
+                //var book_startArr = newArr.map(obj => { return obj.book_start.replace(/-/g, "/").replace(/T/g, " ") })
+                //var book_startArr2 = newArr.map(obj => { return new Date(obj.book_start.replace(/-/g, "/").replace(/T/g, " ")).getTime() });
+                //var book_startArr3 = book_startArr2.sort();
+                //var book_endArr = newArr.map(obj => { return obj.book_end.replace(/-/g, "/").replace(/T/g, " ") })
+                //var book_endArr2 = newArr.map(obj => { return new Date(obj.book_end.replace(/-/g, "/").replace(/T/g, " ")).getTime() });
+                //var book_endArr3 = book_endArr2.sort();
 
-                let book_start = timeStamp(book_startArr3[0]);//获取最早预定开始时间，时间戳转换时间格式
-                let book_end = timeStamp(book_endArr3[0]);//获取最早预定结束时间，时间戳转换时间格式
-                let getgoods_start2 = timeStamp(getgoods_startArr3[getgoods_startArr3.length - 1]);//获取最晚取货开始时间，时间戳转换时间格式
-                let getgoods_end2 = timeStamp(getgoods_endArr3[0]);//获取最早取货结束时间，时间戳转换时间格式
-                let start = book_startArr3[0];
-                let end = book_endArr3[0];
-                console.log("book_endArr", book_startArr3[0], book_end);
-                console.log('getgoods_startArr', getgoods_startArr);
+                var getgoods_startArr = newArr.map(function (obj){ return obj.getgoods_start.replace(/-/g, "/").replace(/T/g, " ") })
+                var getgoods_startArr2 = newArr.map(function (obj){ return new Date(obj.getgoods_start.replace(/-/g, "/").replace(/T/g, " ")).getTime() });
+                var getgoods_startArr3 = getgoods_startArr2.sort();
+                var getgoods_endArr = newArr.map(function (obj){ return obj.getgoods_end.replace(/-/g, "/").replace(/T/g, " ") })
+                var getgoods_endArr2 = newArr.map(function (obj){ return new Date(obj.getgoods_end.replace(/-/g, "/").replace(/T/g, " ")).getTime() });
+                var getgoods_endArr3 = getgoods_endArr2.sort();
 
+                //var book_start = timeStamp(book_startArr3[0]);//获取最早预定开始时间，时间戳转换时间格式
+                //var book_end = timeStamp(book_endArr3[0]);//获取最早预定结束时间，时间戳转换时间格式
+                var getgoods_start2 = timeStamp(getgoods_startArr3[getgoods_startArr3.length - 1]);//获取最晚取货开始时间，时间戳转换时间格式
+                var getgoods_end2 = timeStamp(getgoods_endArr3[0]);//获取最早取货结束时间，时间戳转换时间格式
+                //var start = book_startArr3[0];
+                //var end = book_endArr3[0];
+                //console.log("book_endArr", book_startArr3[0], book_end);
+                //console.log('getgoods_startArr', getgoods_startArr);
 
-
-                let nowDate = getNowFormatDate();//获取网络时间
-                let now = new Date(nowDate).getTime();
-                let djsArr = [];
-                if (start <= now && now <= end) {
-                    //console.log("daojishi倒计时", start, now, end);
-                    //djsArr.push({ time: book_end.replace(/\-/g, "/").replace(/\T/g, " ") });
-                    //daojishi(djsArr, j, 'readyOrder');//倒计时
-
-                    let tr = document.createElement('tr');
-                    let th_time = '提货日期：' + getgoods_start2 + ' ~ ' + getgoods_end2;
-                    tr.innerHTML = '<td colspan="2" class="th_time"></td>';
-                    withdraw[j].parentNode.parentNode.parentNode.appendChild(tr);
-                    let time_info = box.getElementsByClassName('th_time');
-                    time_info[j].innerHTML = th_time;
-                    time_info[j].style.display = 'none';
-                } else {
-                    withdraw[j].style.display = 'none';
-                    //提货时间
-                    let tr = document.createElement('tr');
-                    let th_time = '提货日期：' + getgoods_start2 + ' ~ ' + getgoods_end2;
-                    tr.innerHTML = '<td colspan="2" class="th_time"></td>';
-                    withdraw[j].parentNode.parentNode.parentNode.appendChild(tr);
-                    let time_info = box.getElementsByClassName('th_time');
-                    time_info[j].innerHTML = th_time;
-
-
-                }
-
-                for (let i = 0; i < newArr.length; i++) {
-                    let tbody = document.getElementsByClassName('tbody_1')[j]
-                    let info2 = "";
+                //state="待取货"时取货日期
+                var nowDate = getNowFormatDate();//获取网络时间
+                var now = new Date(nowDate).getTime();
+                var djsArr = [];
+                //if (start <= now && now <= end) {
+                //    //取货时间内
+                //    //var tr = document.createElement('tr');
+                //    //var th_time = '提货日期：' + getgoods_start2 + ' ~ ' + getgoods_end2;
+                //    //tr.innerHTML = '<td colspan="2" class="th_time"></td>';
+                //    //withdraw[j].parentNode.parentNode.parentNode.appendChild(tr);
+                //    //var time_info = box.getElementsByClassName('th_time');
+                //    //time_info[j].innerHTML = th_time;//整个订单的提货日期改为订单里每个商品的提货日期
+                //    ////time_info[j].style.display = 'none';
+                //} else {
+                //    withdraw[j].style.display = 'none';
+                //    //提货时间//整个订单的提货日期改为订单里每个商品的提货日期
+                //    //var tr = document.createElement('tr');
+                //    //var th_time = '提货日期：' + getgoods_start2 + ' ~ ' + getgoods_end2;
+                //    //tr.innerHTML = '<td colspan="2" class="th_time"></td>';
+                //    //withdraw[j].parentNode.parentNode.parentNode.appendChild(tr);
+                //    //var time_info = box.getElementsByClassName('th_time');
+                //    ////time_info[j].innerHTML = th_time;
+                //}
+               
+                for (var i = 0; i < newArr.length; i++) {
+                    var tbody = document.getElementsByClassName('tbody_1')[j]
+                    var info2 = "";
                     info2 += "<td class='img'><img class='images' src='img/jidan.png'></td>";
                     info2 += "<td class='text'><p><span>品名：</span><span class='name'></span></p> <p><span>单价：</span><span class='perprice'>5</span><span>元/<span class='kg'>g</span></span></p><p style='font-size: 28px;'><span>共</span><span class='number'>0</span><span>件商品&nbsp;&nbsp;&nbsp;&nbsp;合计￥</span><span class='count'></span></p></td>";
-                    let tr_2 = document.createElement('tr');
+                    var tr_2 = document.createElement('tr');
                     tr_2.innerHTML = info2;
+                    var date_info = "<td class='_date th_time' colspan='2'></td>";
+                    var date_tr = document.createElement('tr');
+                    date_tr.innerHTML = date_info;
                     tbody.appendChild(tr_2);
+                    tbody.appendChild(date_tr);
                     //展示数据
 
                     total_num[j].innerHTML = (Number(dataArr[j].data[i].money * 1) + Number(total_num[j].innerHTML)).toFixed(2);
-                    let images = tbody.getElementsByClassName('images')[i];
-                    let name = tbody.getElementsByClassName('name')[i];
-                    let perprice = tbody.getElementsByClassName('perprice')[i];
-                    let kg = tbody.getElementsByClassName('kg')[i];
-                    let number = tbody.getElementsByClassName('number')[i];
-                    let count = tbody.getElementsByClassName('count')[i];
+                    var images = tbody.getElementsByClassName('images')[i];
+                    var name = tbody.getElementsByClassName('name')[i];
+                    var perprice = tbody.getElementsByClassName('perprice')[i];
+                    var kg = tbody.getElementsByClassName('kg')[i];
+                    var number = tbody.getElementsByClassName('number')[i];
+                    var count = tbody.getElementsByClassName('count')[i];
+                    var getgoodsDate = tbody.getElementsByClassName('_date')[i];
+                    getgoodsDate.innerHTML = '提货日期：' + newArr[i].getgoods_start + ' ~ ' + newArr[i].getgoods_end;//整个订单的提货日期改为订单里每个商品的提货日期
+
                     //images.src = "../NewConsume_mealticket/" + newArr[i].PicPath;//图片
-                    //images.src = "../NewJMConsume/" + newArr[i].PicPath; 
-                    images.src = "http://183.236.246.246:9230/NewJMConsume_Mall/" + newArr[i].PicPath;
+                    //images.src = "../NewJMConsume/" + newArr[i].PicPath;
+                    images.src = "http://183.240.150.216:9230/NewJMConsumeYDSJL/" + newArr[i].PicPath;
                     name.innerHTML = newArr[i].goods_name;//商品名
                     perprice.innerHTML = newArr[i].goods_price;//单价
                     kg.innerHTML = newArr[i].unit;//单位
@@ -230,73 +229,68 @@
                     count.innerHTML = (newArr[i].money * 1).toFixed(2);//合计
                     console.log("new", newArr);
                     //取货码传值二维码
-                    let id = newArr[0].id;
-                    //let application_Time = newArr[0].getgoods_start;
-                    //let effective_Time = newArr[0].getgoods_end;
-                    //let codeArr = [];
-                    //codeArr.push(id);
-                    //codeArr.push(application_Time);
-                    //codeArr.push(effective_Time);
-
+                    var id = newArr[0].id;
+                    
                     ////取消预定倒计时
-                    //let withdraw = box.getElementsByClassName('withdraw');
-                    //let book_startArr = newArr.map(obj => { return obj.book_start.replace(/-/g, "/").replace(/T/g, " ")})
-                    //let book_startArr2 = newArr.map(obj => { return new Date(obj.book_start.replace(/-/g, "/").replace(/T/g, " ")).getTime() });
-                    //let book_startArr3 = book_startArr2.sort();
-                    //let book_endArr = newArr.map(obj => { return obj.book_end.replace(/-/g, "/").replace(/T/g, " ")})
-                    //let book_endArr2 = newArr.map(obj => { return new Date(obj.book_end.replace(/-/g, "/").replace(/T/g, " ")).getTime() });
-                    //let book_endArr3 = book_endArr2.sort();
+                    //var withdraw = box.getElementsByClassName('withdraw');
+                    //var book_startArr = newArr.map(obj => { return obj.book_start.replace(/-/g, "/").replace(/T/g, " ")})
+                    //var book_startArr2 = newArr.map(obj => { return new Date(obj.book_start.replace(/-/g, "/").replace(/T/g, " ")).getTime() });
+                    //var book_startArr3 = book_startArr2.sort();
+                    //var book_endArr = newArr.map(obj => { return obj.book_end.replace(/-/g, "/").replace(/T/g, " ")})
+                    //var book_endArr2 = newArr.map(obj => { return new Date(obj.book_end.replace(/-/g, "/").replace(/T/g, " ")).getTime() });
+                    //var book_endArr3 = book_endArr2.sort();
 
-                    //let getgoods_startArr = newArr.map(obj => { return obj.getgoods_start.replace(/-/g, "/").replace(/T/g, " ")})
-                    //let getgoods_startArr2 = newArr.map(obj => { return new Date(obj.getgoods_start.replace(/-/g, "/").replace(/T/g, " ")).getTime() });
-                    //let getgoods_startArr3 = getgoods_startArr2.sort();
-                    //let getgoods_endArr = newArr.map(obj => { return obj.getgoods_end.replace(/-/g, "/").replace(/T/g, " ")})
-                    //let getgoods_endArr2 = newArr.map(obj => { return new Date(obj.getgoods_end.replace(/-/g, "/").replace(/T/g, " ")).getTime() });
-                    //let getgoods_endArr3 = getgoods_endArr2.sort();
+                    //var getgoods_startArr = newArr.map(obj => { return obj.getgoods_start.replace(/-/g, "/").replace(/T/g, " ")})
+                    //var getgoods_startArr2 = newArr.map(obj => { return new Date(obj.getgoods_start.replace(/-/g, "/").replace(/T/g, " ")).getTime() });
+                    //var getgoods_startArr3 = getgoods_startArr2.sort();
+                    //var getgoods_endArr = newArr.map(obj => { return obj.getgoods_end.replace(/-/g, "/").replace(/T/g, " ")})
+                    //var getgoods_endArr2 = newArr.map(obj => { return new Date(obj.getgoods_end.replace(/-/g, "/").replace(/T/g, " ")).getTime() });
+                    //var getgoods_endArr3 = getgoods_endArr2.sort();
 
-                    //let book_start = timeStamp(book_startArr3[0]);//获取最早预定开始时间，时间戳转换时间格式
-                    //let book_end = timeStamp(book_endArr3[0]);//获取最早预定结束时间，时间戳转换时间格式
-                    //let getgoods_start2 = timeStamp(getgoods_startArr3[getgoods_startArr3.length - 1]);//获取最晚取货开始时间，时间戳转换时间格式
-                    //let getgoods_end2 = timeStamp(getgoods_endArr3[0]);//获取最早取货结束时间，时间戳转换时间格式
-                    //let start = book_startArr3[0];
-                    //let end = book_endArr3[0];
+                    //var book_start = timeStamp(book_startArr3[0]);//获取最早预定开始时间，时间戳转换时间格式
+                    //var book_end = timeStamp(book_endArr3[0]);//获取最早预定结束时间，时间戳转换时间格式
+                    //var getgoods_start2 = timeStamp(getgoods_startArr3[getgoods_startArr3.length - 1]);//获取最晚取货开始时间，时间戳转换时间格式
+                    //var getgoods_end2 = timeStamp(getgoods_endArr3[0]);//获取最早取货结束时间，时间戳转换时间格式
+                    //var start = book_startArr3[0];
+                    //var end = book_endArr3[0];
                     //console.log("book_endArr", book_startArr3[0], book_end);
                     //console.log('getgoods_startArr', getgoods_startArr);
 
-
-
-                    //let nowDate = getNowFormatDate();//获取网络时间
-                    //let now = new Date(nowDate).getTime();
-                    //let djsArr = [];
+                    //var nowDate = getNowFormatDate();//获取网络时间
+                    //var now = new Date(nowDate).getTime();
+                    //var djsArr = [];
                     //if (start <= now && now <= end) {
                     //    //console.log("daojishi倒计时", start, now, end);
                     //    //djsArr.push({ time: book_end.replace(/\-/g, "/").replace(/\T/g, " ") });
                     //    //daojishi(djsArr, j, 'readyOrder');//倒计时
 
-                    //    let tr = document.createElement('tr');
-                    //    let th_time = '提货日期：' + getgoods_start2 + ' ~ ' + getgoods_end2;
+                    //    var tr = document.createElement('tr');
+                    //    var th_time = '提货日期：' + getgoods_start2 + ' ~ ' + getgoods_end2;
                     //    tr.innerHTML = '<td colspan="2" class="th_time"></td>';
                     //    withdraw[j].parentNode.parentNode.parentNode.appendChild(tr);
-                    //    let time_info = box.getElementsByClassName('th_time');
+                    //    var time_info = box.getElementsByClassName('th_time');
                     //    time_info[j].innerHTML = th_time;
                     //    time_info[j].style.display = 'none';
                     //} else {
                     //    withdraw[j].style.display = 'none';
                     //    //提货时间
-                    //    let tr = document.createElement('tr');
-                    //    let th_time = '提货日期：' + getgoods_start2 + ' ~ ' + getgoods_end2;
+                    //    var tr = document.createElement('tr');
+                    //    var th_time = '提货日期：' + getgoods_start2 + ' ~ ' + getgoods_end2;
                     //    tr.innerHTML = '<td colspan="2" class="th_time"></td>';
                     //    withdraw[j].parentNode.parentNode.parentNode.appendChild(tr);
-                    //    let time_info = box.getElementsByClassName('th_time');
+                    //    var time_info = box.getElementsByClassName('th_time');
                     //    time_info[j].innerHTML = th_time;
-
-
                     //}
 
 
                     //取货操作是否可取货
-                    let recive = box.getElementsByClassName('recive');
-                    if (!(getgoods_startArr3[getgoods_startArr3.length - 1] <= now && now <= getgoods_endArr3[0])) {
+                    var recive = box.getElementsByClassName('recive');
+                    //最晚的提货开始时间到最早的提货结束时间之间
+                    //if (!(getgoods_startArr3[getgoods_startArr3.length - 1] <= now && now <= getgoods_endArr3[0])) {
+                    //    recive[j].className = 'recive recive_color';
+                    //}
+                    //最早的提货开始时间到最晚的提货结束时间之间
+                    if (!(getgoods_startArr3[0] <= now && now <= getgoods_endArr3[getgoods_endArr3.length - 1])) {
                         recive[j].className = 'recive recive_color';
                     }
 
@@ -307,24 +301,22 @@
                             alert('不是取货时间');
                             return;
                         }
-
-
                     }
                     //取消订单
                     withdraw[j].onclick = function () {
                         _confirm2(dataArr[j].order_id);
                     }
-                    //取货码倒计时
-                    let djsArr_2 = [];
-                    let start_2 = book_endArr3[book_endArr3.length - 1];
-                    let end_2 = getgoods_endArr3[0];
-                    let getgoods_end = timeStamp(getgoods_endArr3[0]);
-                    console.log("取货码倒计时", start_2, now, end_2, getgoods_end);
-                    if (start_2 <= now && now <= end_2) {
-                        //console.log("取货码倒计时ok", start_2, now, end_2);
-                        //djsArr_2.push({ time: getgoods_end.replace(/\-/g, "/").replace(/\T/g, " ") });
-                        //daojishi(djsArr_2, j, 'getCode');
-                    }
+                    ////取货码倒计时
+                    //var djsArr_2 = [];
+                    //var start_2 = book_endArr3[book_endArr3.length - 1];
+                    //var end_2 = getgoods_endArr3[0];
+                    //var getgoods_end = timeStamp(getgoods_endArr3[0]);
+                    //console.log("取货码倒计时", start_2, now, end_2, getgoods_end);
+                    //if (start_2 <= now && now <= end_2) {
+                    //    //console.log("取货码倒计时ok", start_2, now, end_2);
+                    //    //djsArr_2.push({ time: getgoods_end.replace(/\-/g, "/").replace(/\T/g, " ") });
+                    //    //daojishi(djsArr_2, j, 'getCode');
+                    //}
                 }
 
                 ////提货日期
@@ -333,24 +325,22 @@
                 //    //djsArr.push({ time: book_end.replace(/\-/g, "/").replace(/\T/g, " ") });
                 //    //daojishi(djsArr, j, 'readyOrder');//倒计时
 
-                //    let tr = document.createElement('tr');
-                //    let th_time = '提货日期：' + getgoods_start2 + ' ~ ' + getgoods_end2;
+                //    var tr = document.createElement('tr');
+                //    var th_time = '提货日期：' + getgoods_start2 + ' ~ ' + getgoods_end2;
                 //    tr.innerHTML = '<td colspan="2" class="th_time"></td>';
                 //    withdraw[j].parentNode.parentNode.parentNode.appendChild(tr);
-                //    let time_info = box.getElementsByClassName('th_time');
+                //    var time_info = box.getElementsByClassName('th_time');
                 //    time_info[j].innerHTML = th_time;
                 //    time_info[j].style.display = 'none';
                 //} else {
                 //    withdraw[j].style.display = 'none';
                 //    //提货时间
-                //    let tr = document.createElement('tr');
-                //    let th_time = '提货日期：' + getgoods_start2 + ' ~ ' + getgoods_end2;
+                //    var tr = document.createElement('tr');
+                //    var th_time = '提货日期：' + getgoods_start2 + ' ~ ' + getgoods_end2;
                 //    tr.innerHTML = '<td colspan="2" class="th_time"></td>';
                 //    withdraw[j].parentNode.parentNode.parentNode.appendChild(tr);
-                //    let time_info = box.getElementsByClassName('th_time');
+                //    var time_info = box.getElementsByClassName('th_time');
                 //    time_info[j].innerHTML = th_time;
-
-
                 //}
             }
 
@@ -358,54 +348,54 @@
         }
         //时间戳转换时间格式
         function timeStamp(dateStamp) {
-            let date = new Date(dateStamp);
-            let Y = date.getFullYear() + '/';
-            let M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '/';
-            let D = (date.getDate() < 10 ? '0' + date.getDate() : date.getDate()) + ' ';
-            let H = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ':';
-            let Mi = (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()) + ':';
-            let S = (date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds());
-            let tempDate = Y + M + D + H + Mi + S;
+            var date = new Date(dateStamp);
+            var Y = date.getFullYear() + '/';
+            var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '/';
+            var D = (date.getDate() < 10 ? '0' + date.getDate() : date.getDate()) + ' ';
+            var H = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ':';
+            var Mi = (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()) + ':';
+            var S = (date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds());
+            var tempDate = Y + M + D + H + Mi + S;
             console.log("时间戳转换", tempDate)
             return tempDate;
         }
         function show_finish(dataArr) {
             var finish = document.getElementById('finish');
-            let newArr = [];
-            for (let j = 0; j < dataArr.length; j++) {
-                let finish = document.getElementById('finish');
-                let add = '';
+            var newArr = [];
+            for (var j = 0; j < dataArr.length; j++) {
+                var finish = document.getElementById('finish');
+                var add = '';
                 add += "<div class='divclass'><table ><tr><td class='time'><span class='date'></span>的订单</td><td class='total'>Total：<span class='total_num'></span></td></tr><tbody id='tbody_3' class='tbody_3'></tbody><tfoot><tr><td colspan = '2' style= 'color:#00cc66; font-size: 35px; text-align: right; padding-right: 40px'> 已完成</td ></tr ></tfoot></table ></div>"
-                let div = document.createElement('div');
+                var div = document.createElement('div');
                 div.innerHTML = add;
                 finish.appendChild(div);
                 newArr = dataArr[j].data;
                 console.log("已完成", dataArr, newArr);
                 //展示数据
-                let date = finish.getElementsByClassName('date');
-                let total_num = finish.getElementsByClassName('total_num');
+                var date = finish.getElementsByClassName('date');
+                var total_num = finish.getElementsByClassName('total_num');
                 date[j].innerHTML = dataArr[j].data[0].order_date.replace(/T/g, " ");
                 //total_num[j].innerHTML = (dataArr[j].data[0].money * 1).toFixed(2);
-                for (let i = 0; i < newArr.length; i++) {
-                    let tbody = finish.getElementsByClassName('tbody_3')[j]
-                    let info2 = "";
+                for (var i = 0; i < newArr.length; i++) {
+                    var tbody = finish.getElementsByClassName('tbody_3')[j]
+                    var info2 = "";
                     info2 += "<td class='img'><img class='images' src='img/jidan.png'></td>";
                     info2 += "<td class='text'><p><span>品名：</span><span class='name'></span></p> <p><span>单价：</span><span class='perprice'>5</span><span>元/<span class='kg'>g</span></span></p><p style='font-size: 28px;'><span>共</span><span class='number'>0</span><span>件商品&nbsp;&nbsp;&nbsp;&nbsp;合计￥</span><span class='count'></span></p></td>";
-                    let tr_2 = document.createElement('tr');
+                    var tr_2 = document.createElement('tr');
                     tr_2.innerHTML = info2;
                     tbody.appendChild(tr_2);
                     //展示数据
 
                     total_num[j].innerHTML = (Number(dataArr[j].data[i].money * 1) + Number(total_num[j].innerHTML)).toFixed(2);
-                    let images = tbody.getElementsByClassName('images')[i];
-                    let name = tbody.getElementsByClassName('name')[i];
-                    let perprice = tbody.getElementsByClassName('perprice')[i];
-                    let kg = tbody.getElementsByClassName('kg')[i];
-                    let number = tbody.getElementsByClassName('number')[i];
-                    let count = tbody.getElementsByClassName('count')[i];
+                    var images = tbody.getElementsByClassName('images')[i];
+                    var name = tbody.getElementsByClassName('name')[i];
+                    var perprice = tbody.getElementsByClassName('perprice')[i];
+                    var kg = tbody.getElementsByClassName('kg')[i];
+                    var number = tbody.getElementsByClassName('number')[i];
+                    var count = tbody.getElementsByClassName('count')[i];
                     //images.src = "../NewConsume_mealticket/" + newArr[i].PicPath;//图片
                     //images.src = "../NewJMConsume/" + newArr[i].PicPath;
-                    images.src = "http://183.236.246.246:9230/NewJMConsume_Mall/" + newArr[i].PicPath;
+                    images.src = "http://183.240.150.216:9230/NewJMConsumeYDSJL/" + newArr[i].PicPath;
                     name.innerHTML = newArr[i].goods_name;//商品名
                     perprice.innerHTML = newArr[i].goods_price;//单价
                     kg.innerHTML = newArr[i].unit;//单位
@@ -417,41 +407,41 @@
         }
         function show_cancel(dataArr, index) {
             var cancel = document.getElementById('cancel');
-            let newArr = [];
-            for (let j = 0; j < dataArr.length; j++) {
-                let cancel = document.getElementById('cancel');
-                let add = '';
+            var newArr = [];
+            for (var j = 0; j < dataArr.length; j++) {
+                var cancel = document.getElementById('cancel');
+                var add = '';
                 add += "<div class='divclass'><table ><tr><td class='time'><span class='date'></span>的订单</td><td class='total'>Total：<span class='total_num'></span></td></tr><tbody id='tbody_2' class='tbody_2'></tbody><tfoot><tr><td colspan = '2' style= 'color: red; font-size: 35px; text-align: right; padding-right: 40px'> 已取消</td ></tr ></tfoot></table ></div>"
-                let div = document.createElement('div');
+                var div = document.createElement('div');
                 div.innerHTML = add;
                 cancel.appendChild(div);
                 newArr = dataArr[j].data;
                 console.log("已取消", dataArr, newArr);
                 //展示数据
-                let date = cancel.getElementsByClassName('date');
-                let total_num = cancel.getElementsByClassName('total_num');
+                var date = cancel.getElementsByClassName('date');
+                var total_num = cancel.getElementsByClassName('total_num');
                 date[j].innerHTML = dataArr[j].data[0].order_date.replace(/T/g, " ");
                 //total_num[j].innerHTML = (dataArr[j].data[0].money * 1).toFixed(2);
-                for (let i = 0; i < newArr.length; i++) {
-                    let tbody = cancel.getElementsByClassName('tbody_2')[j]
-                    let info2 = "";
+                for (var i = 0; i < newArr.length; i++) {
+                    var tbody = cancel.getElementsByClassName('tbody_2')[j]
+                    var info2 = "";
                     info2 += "<td class='img'><img class='images' src='img/jidan.png'></td>";
                     info2 += "<td class='text'><p><span>品名：</span><span class='name'></span></p> <p><span>单价：</span><span class='perprice'>5</span><span>元/<span class='kg'>g</span></span></p><p style='font-size: 28px;'><span>共</span><span class='number'>0</span><span>件商品&nbsp;&nbsp;&nbsp;&nbsp;合计￥</span><span class='count'></span></p></td>";
-                    let tr_2 = document.createElement('tr');
+                    var tr_2 = document.createElement('tr');
                     tr_2.innerHTML = info2;
                     tbody.appendChild(tr_2);
                     //展示数据
                     total_num[j].innerHTML;
                     total_num[j].innerHTML = (Number(dataArr[j].data[i].money * 1) + Number(total_num[j].innerHTML)).toFixed(2);
-                    let images = tbody.getElementsByClassName('images')[i];
-                    let name = tbody.getElementsByClassName('name')[i];
-                    let perprice = tbody.getElementsByClassName('perprice')[i];
-                    let kg = tbody.getElementsByClassName('kg')[i];
-                    let number = tbody.getElementsByClassName('number')[i];
-                    let count = tbody.getElementsByClassName('count')[i];
+                    var images = tbody.getElementsByClassName('images')[i];
+                    var name = tbody.getElementsByClassName('name')[i];
+                    var perprice = tbody.getElementsByClassName('perprice')[i];
+                    var kg = tbody.getElementsByClassName('kg')[i];
+                    var number = tbody.getElementsByClassName('number')[i];
+                    var count = tbody.getElementsByClassName('count')[i];
                     //images.src = "../NewConsume_mealticket/" + newArr[i].PicPath;//图片
                     //images.src = "../NewJMConsume/" + newArr[i].PicPath;
-                    images.src = "http://183.236.246.246:9230/NewJMConsume_Mall/" + newArr[i].PicPath;
+                    images.src = "http://183.240.150.216:9230/NewJMConsumeYDSJL/" + newArr[i].PicPath;
                     name.innerHTML = newArr[i].goods_name;//商品名
                     perprice.innerHTML = newArr[i].goods_price;//单价
                     kg.innerHTML = newArr[i].unit;//单位
@@ -502,9 +492,9 @@
                 url: "api/cancel_order",
                 data: { order_id: id },
                 success: function (data) {
-                    //let dataInfo = JSON.parse(data);
-                    //let dataInfo = eval("(" + data + ")");
-                    let dataInfo = $.parseJSON(data);
+                    //var dataInfo = JSON.parse(data);
+                    //var dataInfo = eval("(" + data + ")");
+                    var dataInfo = $.parseJSON(data);
                     alert(dataInfo.msg);
                     window.location.reload()
                 }
@@ -558,7 +548,7 @@
         }
         function daojishi(array, index, getCode) {
             var set = setInterval(function () {
-                array.map((v, index) => {
+                array.map(function(v, index){
                     var date = timer(v.time);
                     var day = date.days;
                     var hours = date.hours;
@@ -569,7 +559,7 @@
                         v.str = "00:00:00"
                         //设置一个标志，如果全部为0，就可以关闭计时器
                         v.realtime = 0;
-                        let flag = array.every((val, ind) => {
+                        var flag = array.every(function(val, ind){
                             return val.realtime == 0
                         })
                         if (flag) {
@@ -592,12 +582,12 @@
                 // 这里拿到的array就会时刻更新
                 //console.log('array', array);
 
-                let box = document.getElementById('box');
-                let djs = box.getElementsByClassName('djs');
-                let qhm = box.getElementsByClassName('qhm');
+                var box = document.getElementById('box');
+                var djs = box.getElementsByClassName('djs');
+                var qhm = box.getElementsByClassName('qhm');
                 //预定倒计时
                 if (getCode == 'readyOrder') {
-                    for (let i = 0; i < array.length; i++) {
+                    for (var i = 0; i < array.length; i++) {
                         djs[index].innerText = array[i].str;
 
                     }
@@ -605,7 +595,7 @@
                 //取货码倒计时
 
                 if (getCode == 'getCode') {
-                    for (let i = 0; i < array.length; i++) {
+                    for (var i = 0; i < array.length; i++) {
                         qhm[index].innerText = array[i].str;
 
                         if (qhm[index].innerText == '') {
@@ -630,7 +620,7 @@
         }
         //弹出框手机
         function _confirm2(id) {
-            let json = {
+            var json = {
                 title: "是否执行操作？",
                 msg: "",
                 buttons: [
@@ -647,6 +637,6 @@
         };
 
     </script>
-    
+
 </body>
 </html>

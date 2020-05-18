@@ -85,21 +85,16 @@
                 type: "post",
                 url: "api/QRCode",
                 data: { order_id: order_id },
-
                 success: function (data) {
-
                     let info = JSON.parse(data);
-
                     let application_Time = document.getElementById('time1');
                     let effective_Time = document.getElementById('time2');
                     application_Time.innerHTML = info.data[0].order_date.replace(/-/g, "/").replace(/T/g, " ")
                     effective_Time.innerHTML = info.data[0].getgoods_end.replace(/-/g, "/").replace(/T/g, " ")
-
                 }
             });
         }
         function QRcode(order_id) {
-
             jQuery('#qrcodeTable').qrcode({
                 render: "canvas",
                 text: order_id,

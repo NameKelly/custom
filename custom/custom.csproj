@@ -299,6 +299,7 @@
     <Content Include="img\xihongshi.jpg" />
     <Content Include="mall.html" />
     <Content Include="my_order.html" />
+    <Content Include="my_order_old.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />

@@ -3,6 +3,7 @@
 <head>
     <title>确认下单</title>
     <meta name="viewpoint" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
     <link rel="stylesheet" type="text/css" href="./css/sure_order.css">
     <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
     <script src="Scripts/jquery.cookie.js" type="text/javascript"></script>
@@ -11,10 +12,10 @@
     <script>
         var key_id;
         window.onload = function () {
-            var url = location.search; //获取url中"?"符后的字串 ('?modFlag=business&role=1')  
+            var url = location.search; //获取url中"?"符后的字串 ('?modFlag=business&role=1')
             var theRequest = new Object();
             if (url.indexOf("?") != -1) {
-                var str = url.substr(1); //substr()方法返回从参数值开始到结束的字符串；  
+                var str = url.substr(1); //substr()方法返回从参数值开始到结束的字符串；
                 var strs = str.split("&");
                 for (var i = 0; i < strs.length; i++) {
                     theRequest[strs[i].split("=")[0]] = (strs[i].split("=")[1]);
@@ -25,12 +26,12 @@
             }
         }
         function back() {
-            window.location.href = "./mall.html" ;
+            window.location.href = "./mall.html";
         }
 
         //查看订单
         function select_order(order_id) {
-            console.log("查看订单",order_id);
+            console.log("查看订单", order_id);
             $.ajax({
                 type: "post",
                 url: "api/select_order",
@@ -45,7 +46,7 @@
                     document.getElementById('tel').innerText = message.phone_no;
                     document.getElementById('address').innerText = info.data1;
 
-                    for (let i = 0; i < info.data.length; i++) {
+                    for (var i = 0; i < info.data.length; i++) {
                         var table = document.getElementById('table');
                         var tr = document.createElement('tr');
                         var td_1 = document.createElement('td');
@@ -59,13 +60,13 @@
                         tr.appendChild(td_3);
                         table.appendChild(tr);
                         //是否执行完毕
-                      
+
                     }
                     sum();
                 }
             });
         }
-       
+
         //确认下单
         function confirm_order() {
 
@@ -73,23 +74,27 @@
                 type: "post",
                 url: "api/confirm_order",
                 data: { order_id: key_id },
-
                 success: function (data) {
                     console.log('确认下单', data, key_id);
-                   //let info =JSON.parse(data);
-                    let info = eval("(" + data + ")");
-                    alert(info.msg);
-                    goto_order();
+                    //let info =JSON.parse(data);
+                    var info = eval("(" + data + ")");
+                    if (info.code == '200') {
+                        alert(info.msg);
+                        window.location.href = "./my_order.html?data=" + key_id;
+                    } else {
+                        alert(info.msg);
+                        window.location.href = "./mall.html";
+                    }
 
                 }
             });
         }
         //合计
-       
+
         function sum() {
             var table = document.getElementById('table');
-            var rows=table.rows;//获取行对象
-            var colums = table.rows[0].cells.length;//获取列数	
+            var rows = table.rows;//获取行对象
+            var colums = table.rows[0].cells.length;//获取列数
             var tr = document.createElement('tr');
             var td_1 = document.createElement('td');
             var td_2 = document.createElement('td');
@@ -103,8 +108,8 @@
             td_3.innerHTML = num_sum(2);
 
             table.appendChild(tr);
-            num_sum();
-                
+            //num_sum();
+
         }
 
         function num_sum(index) {
@@ -112,11 +117,12 @@
             var table = document.getElementById("table");//获取table对象
             var rows = table.rows;//获取行对象
             var cells = table.rows.item(0).cells;//获取列对象
-            var colums = table.rows[0].cells.length;//获取列数        
+            var colums = table.rows[0].cells.length;//获取列数
             console.log(rows, cells, colums)
 
             for (var i = 1; i < table.rows.length; i++) {
-                get_num += table.rows[i].cells[index].innerText * 1;
+                get_num = ((get_num * 100 + table.rows[i].cells[index].innerText * 100) / 100).toFixed(2);
+                console.log('get_num', get_num)
             }
             return get_num;
         }
@@ -125,8 +131,8 @@
             //window.location.href = "./mall.html?data=" + active;
             window.location.href = "./my_order.html?data=" + key_id;
         }
-      
-        
+
+
     </script>
 </head>
 <body>
@@ -173,7 +179,7 @@
     </section>
 
     <footer>
-        <input type="button" name="" value="确认预定" onclick="confirm_order()">
+        <input type="button" name="confirm_order" value="确认预定" onclick="confirm_order()" style="background-color: #199ed8">
     </footer>
 </body>
 </html>

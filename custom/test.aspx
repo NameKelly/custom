@@ -83,7 +83,6 @@
 
             //添加订单
         function add_order() {
-
             $.ajax({
                 type: "post",
                 url: "api/add_order",
