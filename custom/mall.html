@@ -29,7 +29,7 @@
     </script>
     <script>
         var vConsole = new VConsole();
-        console.log('Hello world!!!添加提货时间33');
+        console.log('Hello world!!!订单');
     </script>
 </head>
 <body id="body">
@@ -41,7 +41,7 @@
         </header>-->
         <div id="tab" class="swiper-container" style="position: relative">
             <ul id="list" class="swiper-wrapper">
-                <li class="swiper-slide" id="myOrder" style="width:20%">我的订单</li>
+                <li class="swiper-slide" id="myOrder" style="width:20%" onclick="toMyOrder()">我的订单</li>
             </ul>
         </div>
         <div class="clear"></div>
@@ -252,7 +252,7 @@
                             select_menu(v.goods_type)
                         })
                     } else {
-                        noData('bigBox', 'key2')
+                        //noData('bigBox', 'key2')
                     }
                 }
             });
@@ -297,11 +297,16 @@
                     li_content[this.index].style.display = 'block';
                     li[this.index].className = 'liactive swiper-slide';
                     if (i == li.length-1) {
-                        console.log('前往我的菜单', i, li.length);
-                        window.location.href = "./my_order.html";
+                        //console.log('前往我的菜单', i, li.length);
+                        //window.location.href = "./my_order.html";
+                        toMyOrder();
                     }
                 }
             });
+        }
+        function toMyOrder() {
+            console.log('去我的菜单');
+            window.location.href = "./my_order.html";
         }
         //获取当前地址中的参数
         function GetQueryString(name) {
@@ -350,7 +355,6 @@
             var div = document.createElement('div');
             div.innerHTML = '<div class="noData" style="margin-top:100px;"><img class="noDataItem" src="./img/noData.png"/><p class="noSeeText">暂无数据</p></div>';
             type.appendChild(div);
-
         }
         //构建页面
         function getList(meat_List, ids, key, i) {
